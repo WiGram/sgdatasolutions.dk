@@ -1,3 +1,6 @@
+# First Page
+Ideally, on this site I would like to host some interactive content I'm learning to produce in R. Everything coding is new to me.
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/WiGram/WiGram.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
