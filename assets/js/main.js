@@ -229,7 +229,7 @@
   document.addEventListener('DOMContentLoaded', function() {
     const resumeSection = document.getElementById('resume');
     
-    fetch('/components/resume.html')
+    fetch('components/resume.html')
       .then(response => response.text())
       .then(html => {
         resumeSection.innerHTML = html;
