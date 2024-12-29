@@ -652,6 +652,21 @@ section,
   line-height: 0;
 }
 
+.about .content img {
+  max-width: 400px;  /* or your preferred max width */
+  width: 100%;
+  height: auto;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 991px) {
+  .about .content img {
+    max-width: 300px;  /* smaller on medium screens */
+    margin: 0 auto 2rem;
+    display: block;
+  }
+}
+
 /*--------------------------------------------------------------
 # Stats Section
 --------------------------------------------------------------*/
@@ -1390,4 +1405,24 @@ section:not(:first-child) {
   height: 1px;
   background: linear-gradient(to right, transparent, var(--accent-color), transparent);
   margin: 4rem 0;
+}
+
+.expertise-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+.expertise-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.expertise-list li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
 }

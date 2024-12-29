@@ -209,17 +209,23 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
-  document.addEventListener('DOMContentLoaded', function() {
-    const resumeSection = document.getElementById('resume');
-    
-    fetch('components/resume.html')
+  function loadComponent(id, path) {
+    fetch(path)
       .then(response => response.text())
       .then(html => {
-        resumeSection.innerHTML = html;
+        document.querySelector(`#${id}`).innerHTML = html;
+        AOS.refresh();
       })
       .catch(error => {
-        console.error('Error loading resume component:', error);
+        console.error(`Error loading ${id} section:`, error);
+        document.querySelector(`#${id}`).innerHTML = '<p>Error loading content</p>';
       });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    loadComponent('resume', 'components/resume.html');
+    loadComponent('about', 'components/about.html');
+    loadComponent('competencies', 'components/competencies.html');
   });
 
 })();
