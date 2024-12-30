@@ -223,9 +223,9 @@
   }
 
   document.addEventListener('DOMContentLoaded', function() {
-    loadComponent('resume', 'assets/js/components/resume.html');
-    loadComponent('about', 'assets/js/components/about.html');
-    loadComponent('competencies', 'assets/js/components/competencies.html');
+    loadComponent('resume', 'src/components/resume.html');
+    loadComponent('about', 'src/components/about.html');
+    loadComponent('competencies', 'src/components/competencies.html');
   });
 
 })();

@@ -1,0 +1,35 @@
+{
+  "name": "sg-data-solutions-portfolio",
+  "version": "1.0.0",
+  "description": "Personal portfolio website for SG Data Solutions",
+  "private": true,
+  "scripts": {
+    "start": "serve src",
+    "build": "mkdir -p dist && cp -r src/* dist/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "aos": "^3.0.0",
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
+    "glightbox": "^3.2.0",
+    "typed.js": "^2.1.0",
+    "swiper": "^11.0.6",
+    "isotope-layout": "^3.0.6",
+    "imagesloaded": "^5.0.0",
+    "waypoints": "^4.0.1",
+    "purecounter": "^1.1.4"
+  },
+  "devDependencies": {
+    "serve": "^14.2.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/sg-data-solutions.git"
+  },
+  "author": "William Gram",
+  "license": "MIT"
+} 
