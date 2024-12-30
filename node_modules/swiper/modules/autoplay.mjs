@@ -43,7 +43,7 @@ function Autoplay(_ref) {
     if (!swiper || swiper.destroyed || !swiper.wrapperEl) return;
     if (e.target !== swiper.wrapperEl) return;
     swiper.wrapperEl.removeEventListener('transitionend', onTransitionEnd);
-    if (pausedByPointerEnter || e.detail && e.detail.bySwiperTouchMove) {
+    if (pausedByPointerEnter) {
       return;
     }
     resume();
@@ -214,10 +214,8 @@ function Autoplay(_ref) {
     }
   };
   const detachMouseEvents = () => {
-    if (swiper.el && typeof swiper.el !== 'string') {
-      swiper.el.removeEventListener('pointerenter', onPointerEnter);
-      swiper.el.removeEventListener('pointerleave', onPointerLeave);
-    }
+    swiper.el.removeEventListener('pointerenter', onPointerEnter);
+    swiper.el.removeEventListener('pointerleave', onPointerLeave);
   };
   const attachDocumentEvents = () => {
     const document = getDocument();

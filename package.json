@@ -9,20 +9,20 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@srexi/purecounterjs": "^1.5.0",
     "aos": "^2.3.4",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "glightbox": "^3.2.0",
-    "typed.js": "^2.1.0",
-    "swiper": "^11.0.6",
-    "isotope-layout": "^3.0.6",
     "imagesloaded": "^5.0.0",
+    "isotope-layout": "^3.0.6",
     "jquery-waypoints": "^2.0.5",
-    "@srexi/purecounterjs": "^1.5.0"
+    "swiper": "^11.0.6",
+    "typed.js": "^2.1.0"
   },
   "devDependencies": {
-    "serve": "^14.2.1",
-    "gh-pages": "^6.1.1"
+    "gh-pages": "^6.1.1",
+    "serve": "^14.2.1"
   },
   "engines": {
     "node": ">=18.0.0"

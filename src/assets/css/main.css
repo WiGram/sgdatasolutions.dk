@@ -63,9 +63,9 @@
 # Component imports
 --------------------------------------------------------------*/
 
-@import 'src/assets/css/components/about.css';
-@import 'src/assets/css/components/competencies.css';
-@import 'src/assets/css/components/resume.css';
+@import '/src/assets/css/components/about.css';
+@import '/src/assets/css/components/competencies.css';
+@import '/src/assets/css/components/resume.css';
 
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
