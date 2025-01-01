@@ -6,6 +6,115 @@
 * License: https://bootstrapmade.com/license/
 */
 
+// CSS imports
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap-icons/font/bootstrap-icons.css'
+import 'aos/dist/aos.css'
+import 'glightbox/dist/css/glightbox.min.css'
+import 'swiper/css'
+
+// CSS Components
+import '/src/assets/css/components/competencies.css'
+import '/src/assets/css/components/resume.css'
+
+// CSS Main Imports
+import '/src/assets/css/main.css'
+
+// HTML Components
+import competenciesHTML from '/src/components/competencies.html?raw'
+import resumeHTML from '/src/components/resume.html?raw'
+
+// JavaScript imports
+import * as bootstrap from 'bootstrap'
+import PureCounter from '@srexi/purecounterjs'
+import AOS from 'aos'
+import Typed from 'typed.js'
+import GLightbox from 'glightbox'
+import imagesLoaded from 'imagesloaded'
+import Isotope from 'isotope-layout'
+import Swiper from 'swiper'
+
+// Modified loadComponent function to handle direct HTML content
+function loadComponent(id, content) {
+  try {
+    const targetElement = document.querySelector(`#${id}`);
+    if (targetElement) {
+      targetElement.innerHTML = content;
+      
+      // Log all image paths immediately after setting innerHTML
+      targetElement.querySelectorAll('img').forEach(img => {
+        console.log(`Image path in ${id}:`, {
+          rawSrc: img.getAttribute('src'),  // The raw src attribute
+          currentSrc: img.currentSrc,       // The resolved src (if any)
+          baseURI: document.baseURI         // The base URI for relative paths
+        });
+        
+        img.onerror = function(e) {
+          console.error(`Image load failed in ${id}:`, {
+            rawSrc: img.getAttribute('src'),
+            attempted: img.src
+          });
+        };
+      });
+      
+      AOS.refresh();
+    } else {
+      console.error(`Target element with id "${id}" not found.`);
+    }
+  } catch (error) {
+    console.error(`Error loading ${id} section:`, error);
+    const targetElement = document.querySelector(`#${id}`);
+    if (targetElement) {
+      targetElement.innerHTML = '<p>Error loading content</p>';
+    } else {
+      console.error(`Target element with id "${id}" not found.`);
+    }
+  }
+}
+
+// Define initScrollspy before using it
+function initScrollspy() {
+  const sections = document.querySelectorAll('section[id]');
+  
+  const observerOptions = {
+    root: null,
+    rootMargin: '-20% 0px -80% 0px',
+    threshold: 0
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        document.querySelectorAll('.navmenu a.active').forEach(link => 
+          link.classList.remove('active')
+        );
+        
+        const activeId = entry.target.getAttribute('id');
+        const activeLink = document.querySelector(`.navmenu a[href="#${activeId}"]`);
+        if (activeLink) {
+          activeLink.classList.add('active');
+        }
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach(section => observer.observe(section));
+}
+
+// Combine your initialization code
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize libraries
+  AOS.init();
+  new PureCounter();
+  
+  // Load components with HTML content directly
+  loadComponent('resume', resumeHTML);
+  loadComponent('competencies', competenciesHTML);
+
+  // Initialize scrollspy
+  initScrollspy();
+});
+
 (function() {
   "use strict";
 
@@ -185,47 +294,6 @@
         }, 100);
       }
     }
-  });
-
-  /**
-   * Navmenu Scrollspy
-   */
-  let navmenulinks = document.querySelectorAll('.navmenu a');
-
-  function navmenuScrollspy() {
-    navmenulinks.forEach(navmenulink => {
-      if (!navmenulink.hash) return;
-      let section = document.querySelector(navmenulink.hash);
-      if (!section) return;
-      let position = window.scrollY + 200;
-      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
-        document.querySelectorAll('.navmenu a.active').forEach(link => link.classList.remove('active'));
-        navmenulink.classList.add('active');
-      } else {
-        navmenulink.classList.remove('active');
-      }
-    })
-  }
-  window.addEventListener('load', navmenuScrollspy);
-  document.addEventListener('scroll', navmenuScrollspy);
-
-  function loadComponent(id, path) {
-    fetch(path)
-      .then(response => response.text())
-      .then(html => {
-        document.querySelector(`#${id}`).innerHTML = html;
-        AOS.refresh();
-      })
-      .catch(error => {
-        console.error(`Error loading ${id} section:`, error);
-        document.querySelector(`#${id}`).innerHTML = '<p>Error loading content</p>';
-      });
-  }
-
-  document.addEventListener('DOMContentLoaded', function() {
-    loadComponent('about', '/src/components/about.html');
-    loadComponent('resume', '/src/components/resume.html');
-    loadComponent('competencies', '/src/components/competencies.html');
   });
 
 })();
