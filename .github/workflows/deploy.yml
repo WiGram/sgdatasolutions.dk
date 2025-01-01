@@ -24,7 +24,9 @@ jobs:
           cache: 'npm'
           
       - name: Install dependencies
-        run: npm install
+        run: |
+          npm install
+          npm install -g rimraf
         
       - name: Build
         run: npm run build
