@@ -1,42 +1,46 @@
 {
   "name": "sg-data-solutions-portfolio",
   "version": "1.0.0",
+  "type": "module",
   "description": "Personal portfolio website for SG Data Solutions",
   "private": true,
   "scripts": {
-    "start": "serve src",
-    "build": "mkdir -p dist && cp -r src/* dist/",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "npm run clean && vite build",
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist",
+    "clean": "rimraf dist"
   },
   "dependencies": {
     "@srexi/purecounterjs": "^1.5.0",
     "aos": "^2.3.4",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
-    "glightbox": "^3.2.0",
+    "glightbox": "^3.3.0",
     "imagesloaded": "^5.0.0",
     "isotope-layout": "^3.0.6",
-    "jquery-waypoints": "^2.0.5",
-    "swiper": "^11.0.6",
+    "swiper": "^11.1.15",
     "typed.js": "^2.1.0"
   },
   "devDependencies": {
     "gh-pages": "^6.1.1",
-    "serve": "^14.2.1"
+    "serve": "^14.2.1",
+    "vite": "^5.4.11",
+    "rimraf": "^5.0.0"
   },
   "engines": {
     "node": ">=18.0.0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/sg-data-solutions.git"
+    "url": "git+https://github.com/WiGram/sgdatasolutions.dk.git"
   },
   "author": "William Gram",
   "license": "MIT",
   "main": "index.js",
   "keywords": [],
   "bugs": {
-    "url": "https://github.com/yourusername/sg-data-solutions/issues"
+    "url": "https://github.com/WiGram/sgdatasolutions.dk/issues"
   },
-  "homepage": "https://github.com/yourusername/sg-data-solutions#readme"
+  "homepage": "https://github.com/WiGram/sgdatasolutions.dk#readme"
 }
