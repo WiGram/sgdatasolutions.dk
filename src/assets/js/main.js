@@ -34,7 +34,7 @@ import competenciesHTML from '/src/components/competencies.html?raw'
 import resumeHTML from '/src/components/resume.html?raw'
 
 // JavaScript imports
-import * as bootstrap from 'bootstrap'
+// import * as bootstrap from 'bootstrap'
 import AOS from 'aos'
 import Typed from 'typed.js'
 import GLightbox from 'glightbox'
@@ -113,19 +113,7 @@ function initScrollspy() {
 // Combine your initialization code
 document.addEventListener('DOMContentLoaded', function() {
   // Initialize libraries
-  AOS.init({
-    duration: 1000,
-    easing: 'ease-in-out',
-    once: true,
-    mirror: false
-  });
-  new Typed('.typed', {
-    strings: ['Developer', 'Freelancer', 'Consultant'],
-    loop: true,
-    typeSpeed: 100,
-    backSpeed: 50,
-    backDelay: 2000
-  });
+  AOS.init();
   new PureCounter();
   
   // Load components with HTML content directly
