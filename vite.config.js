@@ -46,6 +46,19 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html')
+      },
+      output: {
+        manualChunks: {
+          vendor: [
+            'bootstrap',
+            'aos',
+            'typed.js',
+            'glightbox',
+            'isotope-layout',
+            'imagesloaded',
+            'swiper'
+          ]
+        }
       }
     }
   }

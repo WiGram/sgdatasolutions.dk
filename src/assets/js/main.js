@@ -26,13 +26,13 @@ import resumeHTML from '/src/components/resume.html?raw'
 
 // JavaScript imports
 import * as bootstrap from 'bootstrap'
-import PureCounter from '@srexi/purecounterjs'
 import AOS from 'aos'
 import Typed from 'typed.js'
 import GLightbox from 'glightbox'
-import imagesLoaded from 'imagesloaded'
 import Isotope from 'isotope-layout'
+import imagesLoaded from 'imagesloaded'
 import Swiper from 'swiper'
+import PureCounter from '@srexi/purecounterjs'
 
 // Modified loadComponent function to handle direct HTML content
 function loadComponent(id, content) {
@@ -104,7 +104,19 @@ function initScrollspy() {
 // Combine your initialization code
 document.addEventListener('DOMContentLoaded', function() {
   // Initialize libraries
-  AOS.init();
+  AOS.init({
+    duration: 1000,
+    easing: 'ease-in-out',
+    once: true,
+    mirror: false
+  });
+  new Typed('.typed', {
+    strings: ['Developer', 'Freelancer', 'Consultant'],
+    loop: true,
+    typeSpeed: 100,
+    backSpeed: 50,
+    backDelay: 2000
+  });
   new PureCounter();
   
   // Load components with HTML content directly
