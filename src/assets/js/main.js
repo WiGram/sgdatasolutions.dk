@@ -6,12 +6,21 @@
 * License: https://bootstrapmade.com/license/
 */
 
-// CSS imports
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap-icons/font/bootstrap-icons.css'
-import 'aos/dist/aos.css'
-import 'glightbox/dist/css/glightbox.min.css'
-import 'swiper/css'
+try {
+  // CSS imports
+  import('bootstrap/dist/css/bootstrap.min.css')
+  import('bootstrap-icons/font/bootstrap-icons.css')
+  import('aos/dist/aos.css')
+  import('glightbox/dist/css/glightbox.min.css')
+  import('swiper/css')
+} catch (error) {
+  console.error('Error importing CSS:', {
+    message: error.message,  
+    stack: error.stack,  
+    importMeta: error.importMeta,
+    error: error.error,
+  });
+}
 
 // CSS Components
 import '/src/assets/css/components/competencies.css'
