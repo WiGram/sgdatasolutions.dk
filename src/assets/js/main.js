@@ -6,6 +6,30 @@
 * License: https://bootstrapmade.com/license/
 */
 
+// CSS imports
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import 'aos/dist/aos.css';
+import 'glightbox/dist/css/glightbox.min.css';
+import 'swiper/css';
+
+// Check if styles loaded
+function checkStylesLoaded() {
+  const styleChecks = {
+    bootstrap: () => !!document.querySelector('.container'),
+    bootstrapIcons: () => !!document.querySelector('.bi'),
+    aos: () => typeof AOS !== 'undefined',
+    glightbox: () => typeof GLightbox !== 'undefined',
+    swiper: () => typeof Swiper !== 'undefined'
+  };
+
+  Object.entries(styleChecks).forEach(([name, check]) => {
+    if (!check()) {
+      console.warn(`${name} styles may not have loaded properly`);
+    }
+  });
+}
+
 // HTML Components
 let competenciesHTML, resumeHTML;
 const htmlImports = Promise.all([
@@ -70,6 +94,8 @@ Promise.all([htmlImports, libraryImports])
         aosInit();
         initSwiper();
       });
+      // Check if styles loaded
+      window.addEventListener('load', checkStylesLoaded);
     }
   })
   .catch(error => {
