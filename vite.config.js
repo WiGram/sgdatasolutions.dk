@@ -49,6 +49,19 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html')
       },
       output: {
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.source && typeof assetInfo.source === 'string') {
+            if (/\.(png|jpe?g|svg|gif|tiff|bmp|ico)$/i.test(assetInfo.source)) {
+              return `assets/img/[name]-[hash][extname]`;
+            }
+            if (/\.css$/i.test(assetInfo.source)) {
+              return `assets/css/[name]-[hash][extname]`;
+            }
+          }
+          return `assets/[ext]/[name]-[hash][extname]`;
+        },
+        chunkFileNames: 'assets/js/[name]-[hash].js',
+        entryFileNames: 'assets/js/[name]-[hash].js',
         manualChunks: {
           vendor: [
             'bootstrap',
