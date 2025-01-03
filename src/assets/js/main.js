@@ -6,23 +6,6 @@
 * License: https://bootstrapmade.com/license/
 */
 
-// CSS imports
-const cssImports = Promise.all([
-  import('bootstrap/dist/css/bootstrap.min.css'),
-  import('bootstrap-icons/font/bootstrap-icons.css'),
-  import('aos/dist/aos.css'),
-  import('glightbox/dist/css/glightbox.min.css'),
-  import('swiper/css'),
-]).catch(error => {
-  console.error('CSS Import Error:', {
-    message: error.message,
-    stack: error.stack,
-    importMeta: error.importMeta,
-    error: error.error,
-  });
-  throw error; // Re-throw to be caught by the final Promise.all
-});
-
 // HTML Components
 let competenciesHTML, resumeHTML;
 const htmlImports = Promise.all([
@@ -66,7 +49,7 @@ const libraryImports = Promise.all([
 });
 
 // Combine all imports
-Promise.all([cssImports, htmlImports, libraryImports])
+Promise.all([htmlImports, libraryImports])
   .then(() => {
     console.log('All imports successful, initializing app...');
     
