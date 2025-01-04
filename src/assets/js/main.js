@@ -7,11 +7,11 @@
 */
 
 // CSS imports as side effects only
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap-icons/font/bootstrap-icons.css';
-import 'aos/dist/aos.css';
-import 'glightbox/dist/css/glightbox.min.css';
-import 'swiper/css';
+import './bootstrap/dist/css/bootstrap.min.css';
+import './bootstrap-icons/font/bootstrap-icons.css';
+import './aos/dist/aos.css';
+import './glightbox/dist/css/glightbox.min.css';
+import './swiper/css';
 
 // Add a function to verify CSS loading
 function verifyCSSLoading() {
