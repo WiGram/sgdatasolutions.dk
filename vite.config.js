@@ -14,9 +14,9 @@ export default defineConfig({
   
   resolve: {
     alias: {
-      '@': resolve(__dirname, 'src/'),
-      '@assets': resolve(__dirname, 'src/assets/'),
-      '@img': resolve(__dirname, 'src/assets/img/')
+      '@': resolve(__dirname, './'),
+      '@assets': resolve(__dirname, './assets/'),
+      '@img': resolve(__dirname, './assets/img/')
     }
   },
   
@@ -39,6 +39,18 @@ export default defineConfig({
     }
   ],
   
+  optimizeDeps: {
+    include: [
+      'bootstrap',
+      'aos',
+      'typed.js',
+      'glightbox',
+      'isotope-layout',
+      'imagesloaded',
+      'swiper'
+    ]
+  },
+  
   build: {
     outDir: 'dist',
     sourcemap: true,
@@ -56,6 +68,9 @@ export default defineConfig({
             }
             if (/\.css$/i.test(assetInfo.source)) {
               return `assets/css/[name]-[hash][extname]`;
+            }
+            if (/\.(woff2?|eot|ttf|otf)$/i.test(assetInfo.source)) {
+              return `assets/fonts/[name]-[hash][extname]`;
             }
           }
           return `assets/[ext]/[name]-[hash][extname]`;
