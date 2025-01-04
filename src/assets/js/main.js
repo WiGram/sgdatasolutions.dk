@@ -36,9 +36,6 @@ function verifyCSSLoading() {
   });
 }
 
-// Call after a short delay to ensure styles are processed
-setTimeout(verifyCSSLoading, 1000);
-
 // HTML Components
 let competenciesHTML, resumeHTML;
 const htmlImports = Promise.all([
