@@ -9,6 +9,11 @@ export default defineConfig({
     modules: {
       localsConvention: 'camelCase',
       generateScopedName: '[name]__[local]___[hash:base64:5]'
+    },
+    preprocessorOptions: {
+      css: {
+        importPrefix: '~'
+      }
     }
   },
   
