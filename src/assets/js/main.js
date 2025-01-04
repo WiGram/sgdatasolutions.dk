@@ -6,39 +6,38 @@
 * License: https://bootstrapmade.com/license/
 */
 
-// CSS imports with dynamic import for better error tracking
-const cssImports = Promise.all([
-  import('bootstrap/dist/css/bootstrap.min.css'),
-  import('bootstrap-icons/font/bootstrap-icons.css'),
-  import('aos/dist/aos.css'),
-  import('glightbox/dist/css/glightbox.min.css'),
-  import('swiper/css'),
-]).catch(error => {
-  console.error('CSS Import Error:', {
-    message: error.message,
-    stack: error.stack,
-    importMeta: error.importMeta,
-    error: error.error,
-  });
-  throw error;
-});
+// CSS imports as side effects only
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import 'aos/dist/aos.css';
+import 'glightbox/dist/css/glightbox.min.css';
+import 'swiper/css';
 
-// Check if styles loaded
-function checkStylesLoaded() {
-  const styleChecks = {
-    bootstrap: () => !!document.querySelector('.container'),
-    bootstrapIcons: () => !!document.querySelector('.bi'),
-    aos: () => typeof AOS !== 'undefined',
-    glightbox: () => typeof GLightbox !== 'undefined',
-    swiper: () => typeof Swiper !== 'undefined'
-  };
+// Add a function to verify CSS loading
+function verifyCSSLoading() {
+  const cssChecks = [
+    { name: 'bootstrap', selector: '.container' },
+    { name: 'bootstrap-icons', selector: '.bi' },
+    { name: 'aos', test: () => typeof AOS !== 'undefined' },
+    { name: 'glightbox', test: () => typeof GLightbox !== 'undefined' },
+    { name: 'swiper', test: () => typeof Swiper !== 'undefined' }
+  ];
 
-  Object.entries(styleChecks).forEach(([name, check]) => {
-    if (!check()) {
-      console.warn(`${name} styles may not have loaded properly`);
-    }
+  console.log('CSS Loading Status:', {
+    styleElements: Array.from(document.querySelectorAll('style, link[rel="stylesheet"]')).map(el => ({
+      type: el.tagName.toLowerCase(),
+      href: el.href || 'inline-styles',
+      content: el.tagName === 'STYLE' ? el.textContent.slice(0, 100) + '...' : 'external'
+    })),
+    featureChecks: cssChecks.map(check => ({
+      name: check.name,
+      loaded: check.test ? check.test() : !!document.querySelector(check.selector)
+    }))
   });
 }
+
+// Call after a short delay to ensure styles are processed
+setTimeout(verifyCSSLoading, 1000);
 
 // HTML Components
 let competenciesHTML, resumeHTML;
@@ -83,7 +82,7 @@ const libraryImports = Promise.all([
 });
 
 // Combine all imports
-Promise.all([cssImports, htmlImports, libraryImports])
+Promise.all([htmlImports, libraryImports])
   .then(() => {
     console.log('All imports successful, initializing app...');
     
@@ -105,7 +104,7 @@ Promise.all([cssImports, htmlImports, libraryImports])
         initSwiper();
       });
       // Check if styles loaded
-      window.addEventListener('load', checkStylesLoaded);
+      window.addEventListener('load', verifyCSSLoading);
     }
   })
   .catch(error => {
