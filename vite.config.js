@@ -55,10 +55,11 @@ export default defineConfig({
   },
   
   build: {
-    outDir: 'dist',
-    sourcemap: true,
-    assetsDir: 'assets',
+    target: ['es2015'],
+    cssTarget: ['chrome87', 'firefox78', 'safari14', 'edge88'],
     cssCodeSplit: false,
+    outDir: 'dist',
+    assetsDir: 'assets',
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html')
@@ -72,24 +73,8 @@ export default defineConfig({
             if (/\.css$/i.test(assetInfo.source)) {
               return `assets/css/[name]-[hash][extname]`;
             }
-            if (/\.(woff2?|eot|ttf|otf)$/i.test(assetInfo.source)) {
-              return `assets/fonts/[name]-[hash][extname]`;
-            }
           }
           return `assets/[ext]/[name]-[hash][extname]`;
-        },
-        chunkFileNames: 'assets/js/[name]-[hash].js',
-        entryFileNames: 'assets/js/[name]-[hash].js',
-        manualChunks: {
-          vendor: [
-            'bootstrap',
-            'aos',
-            'typed.js',
-            'glightbox',
-            'isotope-layout',
-            'imagesloaded',
-            'swiper'
-          ]
         }
       }
     }
