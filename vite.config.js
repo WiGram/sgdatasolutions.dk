@@ -28,13 +28,12 @@ export default defineConfig({
   // Plugins for additional functionality (e.g., custom HTML transformations)
   plugins: [
     {
-      name: 'dynamic-html',
+      name: 'html-transform',
       transform(code, id) {
         if (id.endsWith('.html?raw')) {
-          // This plugin transforms image paths in dynamically loaded HTML
           return {
-            code: code.replace(/@img\//g, '/assets/'), // Adjust the path as per your needs
-            map: null,
+            code: `export default ${JSON.stringify(code)}`,
+            map: null
           }
         }
       }
@@ -49,7 +48,6 @@ export default defineConfig({
       'typed.js',
       'glightbox',
       'swiper',
-      // Include any other third-party libraries you're using
     ]
   },
 
