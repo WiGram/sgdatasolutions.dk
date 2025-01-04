@@ -2,81 +2,72 @@ import { defineConfig } from 'vite'
 import { resolve } from 'path'
 
 export default defineConfig({
-  base: '/',
-  
-  // Configure CSS Modules
+  // Set base URL for GitHub Pages
+  base: '/',  // Your actual repo name
+
+  // CSS configuration
   css: {
     modules: {
-      localsConvention: 'camelCase',
-      generateScopedName: '[name]__[local]___[hash:base64:5]'
+      localsConvention: 'camelCase'
     },
     preprocessorOptions: {
       css: {
-        importPrefix: '~'
+        // Any global CSS configurations
+        charset: false  // Avoid warnings about '@charset' being required
       }
     }
   },
-  
+
+  // Resolve alias configuration for simplifying imports
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src')
     }
   },
-  
+
+  // Plugins for additional functionality (e.g., custom HTML transformations)
   plugins: [
     {
       name: 'dynamic-html',
       transform(code, id) {
         if (id.endsWith('.html?raw')) {
+          // This plugin transforms image paths in dynamically loaded HTML
           return {
-            // Transform @img paths in dynamically loaded HTML
-            code: code.replace(
-              /@img\//g, 
-              // Use relative path from components to assets
-              '/assets/'
-            ),
-            map: null
+            code: code.replace(/@img\//g, '/assets/'), // Adjust the path as per your needs
+            map: null,
           }
         }
       }
     }
   ],
-  
+
+  // Optimize dependencies for production builds
   optimizeDeps: {
     include: [
       'bootstrap',
       'aos',
       'typed.js',
       'glightbox',
-      'isotope-layout',
-      'imagesloaded',
-      'swiper'
+      'swiper',
+      // Include any other third-party libraries you're using
     ]
   },
-  
+
+  // Build configuration for production
   build: {
-    target: ['es2015'],
-    cssTarget: ['chrome87', 'firefox78', 'safari14', 'edge88'],
-    cssCodeSplit: false,
     outDir: 'dist',
     assetsDir: 'assets',
+    cssCodeSplit: false,
+    
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html')
       },
       output: {
-        assetFileNames: (assetInfo) => {
-          if (assetInfo.source && typeof assetInfo.source === 'string') {
-            if (/\.(png|jpe?g|svg|gif|tiff|bmp|ico)$/i.test(assetInfo.source)) {
-              return `assets/img/[name]-[hash][extname]`;
-            }
-            if (/\.css$/i.test(assetInfo.source)) {
-              return `assets/css/[name]-[hash][extname]`;
-            }
-          }
-          return `assets/[ext]/[name]-[hash][extname]`;
-        }
+        assetFileNames: 'assets/[name].[hash][extname]',
+        chunkFileNames: 'assets/[name].[hash].js',
+        entryFileNames: 'assets/[name].[hash].js'
       }
     }
   }
-}) 
+})
