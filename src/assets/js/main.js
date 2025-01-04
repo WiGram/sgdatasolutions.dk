@@ -39,8 +39,8 @@ function verifyCSSLoading() {
 // HTML Components
 let competenciesHTML, resumeHTML;
 const htmlImports = Promise.all([
-  import('/src/components/competencies.html?raw'),
-  import('/src/components/resume.html?raw')
+  import('@/components/competencies.html?raw'),
+  import('@/components/resume.html?raw')
 ]).then(imports => {
   [competenciesHTML, resumeHTML] = imports.map(module => module.default);
   console.log('HTML imports successful:', { competenciesHTML, resumeHTML });
