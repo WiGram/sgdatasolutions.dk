@@ -7,34 +7,23 @@
 */
 
 // CSS imports as side effects only
-import './bootstrap/dist/css/bootstrap.min.css';
-import './bootstrap-icons/font/bootstrap-icons.css';
-import './aos/dist/aos.css';
-import './glightbox/dist/css/glightbox.min.css';
-import './swiper/css';
-
-// Add a function to verify CSS loading
-function verifyCSSLoading() {
-  const cssChecks = [
-    { name: 'bootstrap', selector: '.container' },
-    { name: 'bootstrap-icons', selector: '.bi' },
-    { name: 'aos', test: () => typeof AOS !== 'undefined' },
-    { name: 'glightbox', test: () => typeof GLightbox !== 'undefined' },
-    { name: 'swiper', test: () => typeof Swiper !== 'undefined' }
-  ];
-
-  console.log('CSS Loading Status:', {
-    styleElements: Array.from(document.querySelectorAll('style, link[rel="stylesheet"]')).map(el => ({
-      type: el.tagName.toLowerCase(),
-      href: el.href || 'inline-styles',
-      content: el.tagName === 'STYLE' ? el.textContent.slice(0, 100) + '...' : 'external'
-    })),
-    featureChecks: cssChecks.map(check => ({
-      name: check.name,
-      loaded: check.test ? check.test() : !!document.querySelector(check.selector)
-    }))
+const cssImports = Promise.all([
+  import('./bootstrap/dist/css/bootstrap.min.css'),
+  import('./bootstrap-icons/font/bootstrap-icons.css'),
+  import('./aos/dist/aos.css'),
+  import('./glightbox/dist/css/glightbox.min.css'),
+  import('./swiper/css')
+]).then(imports => {
+  console.log('CSS imports successful:', imports);
+}).catch(error => {
+  console.error('CSS Import Error:', {
+    message: error.message,
+    stack: error.stack,
+    importMeta: error.importMeta
   });
-}
+  throw error;
+});
+
 
 // HTML Components
 let competenciesHTML, resumeHTML;
@@ -79,7 +68,7 @@ const libraryImports = Promise.all([
 });
 
 // Combine all imports
-Promise.all([htmlImports, libraryImports])
+Promise.all([cssImports, htmlImports, libraryImports])
   .then(() => {
     console.log('All imports successful, initializing app...');
     
@@ -100,8 +89,6 @@ Promise.all([htmlImports, libraryImports])
         aosInit();
         initSwiper();
       });
-      // Check if styles loaded
-      window.addEventListener('load', verifyCSSLoading);
     }
   })
   .catch(error => {
