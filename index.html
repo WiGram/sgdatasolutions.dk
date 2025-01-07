@@ -39,7 +39,7 @@
                         <a class="nav-link" href="#cv">CV</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                        <a class="nav-link" href="#projects">Projects</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#blog">Blog</a>
@@ -67,7 +67,7 @@
     <section id="about">
         <div class="container">
             <!-- Brief Introduction -->
-            <div class="about-header">
+            <div class="section-header">
                 <h2>About Me</h2>
                 <p class="lead">I help organizations transform their data into actionable insights and efficient data pipelines.</p>
             </div>
@@ -104,7 +104,7 @@
 
             <!-- Call to Action -->
             <div class="about-cta">
-                <a href="#portfolio" class="btn btn-primary">View My Work</a>
+                <a href="#projects" class="btn btn-primary">View My Work</a>
                 <a href="#contact" class="btn btn-outline">Get in Touch</a>
             </div>
         </div>
@@ -113,7 +113,7 @@
     <!-- Competencies Section -->
     <section id="competencies">
         <div class="container">
-            <div class="competencies-header">
+            <div class="section-header">
                 <h2>Professional Competencies</h2>
                 <p class="lead">Extensive experience in data engineering and modeling across financial services and property management</p>
             </div>
@@ -258,7 +258,7 @@
     <!-- CV Section -->
     <section id="cv">
         <div class="container">
-            <div class="cv-header">
+            <div class="section-header">
                 <h2>Professional Journey</h2>
                 <p class="lead">Building data solutions across finance, public sector, and consulting</p>
             </div>
@@ -368,12 +368,25 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="py-5 bg-light">
+    <!-- Projects Section -->
+    <section id="projects" class="bg-light">
         <div class="container">
-            <h2>Portfolio</h2>
-            <div class="row">
-                <!-- Project cards will go here -->
+            <div class="section-header">
+                <h2>Projects</h2>
+                <p class="lead">My portfolio of projects</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Project Card -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card project-card h-100" data-bs-toggle="modal" data-bs-target="#project1Modal">
+                        <div class="card-body">
+                            <h5 class="card-title">Regulatory Reporting Solution</h5>
+                            <h6 class="card-subtitle">Nordic Financial Services</h6>
+                            <p class="card-text">Migration of regulatory reporting from mainframe to modern EDW-based solution.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -415,5 +428,37 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="src/js/main.js"></script>
+
+    <!-- Project Modal -->
+    <div class="modal fade" id="project1Modal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Regulatory Reporting Solution</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Client</h6>
+                    <p>Major Nordic Financial Services Data Center</p>
+                    
+                    <h6>Challenge</h6>
+                    <p>Migration from legacy mainframe reporting to modern EDW solution while maintaining regulatory compliance.</p>
+                    
+                    <h6>Solution</h6>
+                    <ul>
+                        <li>Built specialized data mart on EDW</li>
+                        <li>Implemented reconciliation with existing systems</li>
+                        <li>Created user-friendly mapping interface</li>
+                    </ul>
+                    
+                    <h6>Results</h6>
+                    <p>Successfully delivered compliant reporting solution with reduced technical debt and improved maintainability.</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="projects/regulatory-reporting" class="btn btn-primary">View Full Project</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html> 
