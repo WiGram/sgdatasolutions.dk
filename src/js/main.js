@@ -1,3 +1,5 @@
+import heroStyles from '../css/hero.module.css'
+
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', () => {
     // Get all sections
@@ -51,4 +53,20 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         })
     })
+    
+    // Get hero section elements
+    const heroSection = document.querySelector('#hero')
+    const heroContainer = heroSection.querySelector('div')
+    const heroTitle = heroSection.querySelector('h1')
+    const heroSubtitle = heroSection.querySelector('h2')
+    const heroDescription = heroSection.querySelector('p')
+    const ctaButton = heroSection.querySelector('a')
+    
+    // Apply CSS Module classes
+    heroSection.className = heroStyles.hero
+    heroContainer.className = heroStyles.container
+    heroTitle.className = heroStyles.title
+    heroSubtitle.className = heroStyles.subtitle
+    heroDescription.className = heroStyles.description
+    ctaButton.className = heroStyles.ctaButton
 }) 
