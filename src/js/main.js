@@ -1,4 +1,4 @@
-import heroStyles from '../css/hero.module.css'
+import { heroStyles } from '../css/styles'
 
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', () => {
