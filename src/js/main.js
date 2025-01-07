@@ -1,5 +1,3 @@
-import '../css/style.css'
-
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', () => {
     // Get all sections
