@@ -1,665 +1,418 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>SG Data Solutions</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <link href="/src/assets/img/favicon.png" rel="icon">
-  <link href="/src/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
-
-  <!-- Main CSS File -->
-  <link href="/src/assets/css/main.css" rel="stylesheet">
-  <link href="/src/assets/css/components/about.css" rel="stylesheet">
-  <link href="/src/assets/css/components/competencies.css" rel="stylesheet">
-  <link href="/src/assets/css/components/resume.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: iPortfolio
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Updated: Jun 29 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SG Data Solutions | William Sjölin Gram</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="src/css/style.css">
 </head>
-
-<body class="index-page">
-
-  <header id="header" class="header dark-background d-flex flex-column">
-    <i class="header-toggle d-xl-none bi bi-list"></i>
-
-    <div class="profile-img">
-      <img src="/src/assets/img/portrait.jpg" alt="" class="img-fluid rounded-circle">
-    </div>
-
-    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
-      <!-- Uncomment the line below if you also wish to use an image logo -->
-      <!-- <img src="/src/assets/img/logo.png" alt=""> -->
-      <h1 class="sitename">SG Data Solutions
-      </h1>
-    </a>
-
-    <div class="social-links text-center">
-      <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-      <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-      <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-      <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
-      <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-    </div>
-
-    <nav id="navbar" class="navbar">
-      <ul>
-        <li><a href="#hero" class="nav-link scrollto active">Home</a></li>
-        <li><a href="#about" class="nav-link scrollto">About</a></li>
-        <li><a href="#competencies" class="nav-link scrollto">Core Competencies</a></li>
-        <li><a href="#resume" class="nav-link scrollto">Resume</a></li>
-        <li><a href="#case-studies" class="nav-link scrollto">Case Studies</a></li>
-        <li><a href="#services" class="nav-link scrollto">Services</a></li>
-        <li><a href="#contact" class="nav-link scrollto">Contact</a></li>
-      </ul>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand" href="#">SG Data Solutions</a>
+            
+            <!-- Mobile Toggle Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navigation Items -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hero">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#competencies">Competencies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cv">CV</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#blog">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
-  </header>
-
-  <main class="main">
-
     <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
-
-      <img src="/src/assets/img/banner.jpg" alt="" data-aos="fade-in" class="">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="110">
-        <h2>SG Data Solutions
-        </h2>
-        <p>I'm a <span class="typed" data-typed-items="Developer, Freelancer, Consultant">Designer</span><span
-            class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span
-            class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
-      </div>
-
-    </section><!-- /Hero Section -->
+    <section id="hero" class="vh-100 d-flex align-items-center">
+        <div class="container">
+            <h1>William Sjölin Gram</h1>
+            <h2>Founder of SG Data Solutions</h2>
+            <p>Data Engineering & Analytics Solutions</p>
+            <!-- Call to action button -->
+            <a href="#contact" class="cta-button">Let's Work Together</a>
+        </div>
+    </section>
 
     <!-- About Section -->
-    <section id="about" class="about section">
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>About</h2>
-      </div>
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4 justify-content-center">
-          <div class="col-lg-4">
-            <img src="/src/assets/img/portrait.jpg" alt="" class="img-fluid">
-          </div>
-          <div class="col-lg-8 content">
-            <h2>Data Engineering & Architecture Professional</h2>
-            <p class="fst-italic py-3">
-              Experienced data engineer specializing in end-to-end data platform design and implementation,
-              with expertise in modern data architecture patterns and API development.
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <!-- <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>sgdatasolutions.dk/</span></li> -->
-                  <li><i class="bi bi-chevron-right"></i> <strong>LinkedIn:</strong>
-                    <span>linkedin.com/in/william-gram/</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Github:</strong>
-                    <span>https://github.com/WiGram/</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Copenhagen, Denmark</span></li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>MSc Economics, University of
-                      Copenhagen</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>william.gram@outlook.com</span>
-                  </li>
-                </ul>
-              </div>
+    <section id="about">
+        <div class="container">
+            <!-- Brief Introduction -->
+            <div class="about-header">
+                <h2>About Me</h2>
+                <p class="lead">I help organizations transform their data into actionable insights and efficient data pipelines.</p>
             </div>
-            <p class="py-3">
-              As a data engineer, I specialize in designing and implementing robust data architectures following
-              the medallion architecture pattern. My expertise includes:
-            </p>
-            <ul class="expertise-list">
-              <li>Designing and implementing data models for the gold layer, focusing on business value and analytical
-                accessibility</li>
-              <li>Creating efficient ETL/ELT pipelines from bronze (raw) through silver (standardized) to gold
-                (business-ready) layers</li>
-              <li>Developing RESTful APIs using FastAPI, enabling seamless data exchange and integration</li>
-              <li>Orchestrating end-to-end data workflows, from ingestion to final consumption</li>
-            </ul>
+
+            <!-- Main Content Grid -->
+            <div class="about-grid">
+                <!-- Personal Story -->
+                <div class="about-story">
+                    <h3>My Journey</h3>
+                    <p>With [X] years in data engineering and analytics, I've helped companies across [industries] 
+                       optimize their data infrastructure and derive meaningful insights. My approach combines 
+                       technical expertise with business acumen to deliver practical, scalable solutions.</p>
+                </div>
+
+                <!-- Key Focus Areas -->
+                <div class="about-focus">
+                    <h3>What I Do</h3>
+                    <ul class="focus-list">
+                        <li>Design and implement robust data pipelines</li>
+                        <li>Build scalable data warehouse solutions</li>
+                        <li>Develop business intelligence dashboards</li>
+                        <li>Optimize data processes and infrastructure</li>
+                    </ul>
+                </div>
+
+                <!-- Work Philosophy -->
+                <div class="about-philosophy">
+                    <h3>My Approach</h3>
+                    <p>I believe in building solutions that are not just technically sound but also 
+                       business-focused and future-proof. Every project starts with understanding your 
+                       unique challenges and goals.</p>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="about-cta">
+                <a href="#portfolio" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-outline">Get in Touch</a>
+            </div>
+        </div>
     </section>
 
     <!-- Competencies Section -->
-    <section id="competencies" class="competencies section">
-      <!-- Content will be loaded dynamically -->
+    <section id="competencies">
+        <div class="container">
+            <div class="competencies-header">
+                <h2>Professional Competencies</h2>
+                <p class="lead">Extensive experience in data engineering and modeling across financial services and property management</p>
+            </div>
+
+            <div class="competencies-grid">
+                <!-- Domain Expertise -->
+                <div class="competency-card featured">
+                    <div class="card-header">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Domain Expertise</h3>
+                    </div>
+                    <ul class="skill-list">
+                        <li class="expertise-item">
+                            <h4>Financial Markets</h4>
+                            <p>Risk management modeling and analytics for trading floor operations</p>
+                        </li>
+                        <li class="expertise-item">
+                            <h4>Banking & Finance</h4>
+                            <p>Personal and corporate banking data modeling in enterprise data centers</p>
+                        </li>
+                        <li class="expertise-item">
+                            <h4>Property Portfolio Management</h4>
+                            <p>Large-scale property portfolio data analysis and modeling</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Technical Stack -->
+                <div class="competency-card">
+                    <div class="card-header">
+                        <i class="fas fa-cloud"></i>
+                        <h3>Cloud & Infrastructure</h3>
+                    </div>
+                    <ul class="skill-list">
+                        <li class="skill-item expert">
+                            <span class="skill-name">Azure Data Factory</span>
+                            <div class="skill-level" data-level="expert"></div>
+                        </li>
+                        <li class="skill-item expert">
+                            <span class="skill-name">Azure Functions</span>
+                            <div class="skill-level" data-level="expert"></div>
+                        </li>
+                        <li class="skill-item expert">
+                            <span class="skill-name">Azure Data Lake</span>
+                            <div class="skill-level" data-level="expert"></div>
+                        </li>
+                        <li class="skill-item expert">
+                            <span class="skill-name">Azure SQL Database</span>
+                            <div class="skill-level" data-level="expert"></div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Database & SQL -->
+                <div class="competency-card">
+                    <div class="card-header">
+                        <i class="fas fa-database"></i>
+                        <h3>Database Systems</h3>
+                    </div>
+                    <ul class="skill-list">
+                        <li class="skill-item expert">
+                            <span class="skill-name">MS SQL Server</span>
+                            <div class="skill-level" data-level="expert"></div>
+                        </li>
+                        <li class="skill-item expert">
+                            <span class="skill-name">Teradata SQL</span>
+                            <div class="skill-level" data-level="expert"></div>
+                        </li>
+                        <li class="skill-item intermediate">
+                            <span class="skill-name">PostgreSQL</span>
+                            <div class="skill-level" data-level="intermediate"></div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Programming & Frameworks -->
+                <div class="competency-card">
+                    <div class="card-header">
+                        <i class="fas fa-code"></i>
+                        <h3>Programming & Analytics</h3>
+                    </div>
+                    <ul class="skill-list">
+                        <li class="skill-item expert">
+                            <span class="skill-name">Python Analytics Stack</span>
+                            <small>pandas, numpy, scikit-learn</small>
+                            <div class="skill-level" data-level="expert"></div>
+                        </li>
+                        <li class="skill-item intermediate">
+                            <span class="skill-name">FastAPI Development</span>
+                            <small>REST APIs, async operations</small>
+                            <div class="skill-level" data-level="intermediate"></div>
+                        </li>
+                        <li class="skill-item advanced">
+                            <span class="skill-name">R & Shiny</span>
+                            <small>Statistical analysis, dashboarding</small>
+                            <div class="skill-level" data-level="advanced"></div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Business Analytics -->
+                <div class="competency-card">
+                    <div class="card-header">
+                        <i class="fas fa-table"></i>
+                        <h3>Business Analytics</h3>
+                    </div>
+                    <ul class="skill-list">
+                        <li class="skill-item expert">
+                            <span class="skill-name">Advanced Excel Analytics</span>
+                            <small>Financial modeling, scenario analysis, dashboards</small>
+                            <div class="skill-level" data-level="expert"></div>
+                        </li>
+                        <li class="skill-item expert">
+                            <span class="skill-name">Business Intelligence</span>
+                            <small>Performance analytics, reporting solutions</small>
+                            <div class="skill-level" data-level="expert"></div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Methodologies -->
+                <div class="competency-card">
+                    <div class="card-header">
+                        <i class="fas fa-tasks"></i>
+                        <h3>Methodologies</h3>
+                    </div>
+                    <ul class="skill-list methodology-list">
+                        <li>
+                            <span class="methodology-item">Agile Scrum</span>
+                            <p>Experience with PI planning, sprint management, and daily standups</p>
+                        </li>
+                        <li>
+                            <span class="methodology-item">Project Management</span>
+                            <p>Stakeholder management and critical delivery coordination</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Resume Section -->
-    <section id="resume" class="resume section">
-      <!-- Content will be loaded dynamically -->
+    <!-- CV Section -->
+    <section id="cv">
+        <div class="container">
+            <div class="cv-header">
+                <h2>Professional Journey</h2>
+                <p class="lead">Building data solutions across finance, public sector, and consulting</p>
+            </div>
+
+            <!-- Experience Timeline -->
+            <div class="timeline-container">
+                <h3>Experience</h3>
+                
+                <div class="timeline">
+                    <!-- Current Role -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker current"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">November 2024 - Present</div>
+                            <h4>Founder & Data Solutions Consultant</h4>
+                            <h5>SG Data Solutions</h5>
+                            <ul class="experience-details">
+                                <li>Independent data engineering and analytics consultancy</li>
+                                <li>Delivering end-to-end data solutions for clients</li>
+                                <li>Specializing in cloud infrastructure and business intelligence</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Previous Implement Role -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">March 2023 - October 2024</div>
+                            <h4>Senior Management Consultant</h4>
+                            <h5>Implement Consulting Group</h5>
+                            <ul class="experience-details">
+                                <li>Led cross-industry data platform implementation projects</li>
+                                <li>Designed performance pay systems and quality management frameworks</li>
+                                <li>Delivered solutions across Financial Services, Construction and Public sectors</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">August 2021 - February 2023</div>
+                            <h4>Management Consultant</h4>
+                            <h5>PwC</h5>
+                            <ul class="experience-details">
+                                <li>Spearheaded tax reporting engine transformation project</li>
+                                <li>Led migration from mainframe to modern EDW solution</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">December 2017 - July 2021</div>
+                            <h4>Risk Manager</h4>
+                            <h5>The Danish Central Bank</h5>
+                            <ul class="experience-details">
+                                <li>Managed currency reserve risk assessment</li>
+                                <li>Developed and maintained risk assessment tools</li>
+                                <li>Designed daily credit ratings reporting system</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">August 2015 - November 2017</div>
+                            <h4>Assistant Analyst</h4>
+                            <h5>The Danish Ministry of Business and Financial Affairs</h5>
+                            <ul class="experience-details">
+                                <li>Conducted financial services industry analysis</li>
+                                <li>Contributed to regulatory impact assessments</li>
+                                <li>Developed entrepreneurship support initiatives</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Timeline -->
+                <h3>Education</h3>
+                <div class="timeline education">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2021 - 2023</div>
+                            <h4>MSc Economics</h4>
+                            <h5>University of Copenhagen</h5>
+                            <p>Focus on mathematical economics and econometrics</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2017 - 2020</div>
+                            <h4>BSc Economics</h4>
+                            <h5>University of Copenhagen</h5>
+                            <p>Specialized in theoretical economics with emphasis on mathematics</p>
+                            <p class="thesis">Thesis: Algebraic topology and fixed point theory in microeconomic equilibria</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section light-background">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-          consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
-          in iste officiis commodi quidem hic quas.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-app">App</li>
-            <li data-filter=".filter-product">Product</li>
-            <li data-filter=".filter-branding">Branding</li>
-            <li data-filter=".filter-books">Books</li>
-          </ul><!-- End Portfolio Filters -->
-
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100">
-                <img src="/src/assets/img/portfolio/app-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>App 1</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="/src/assets/img/portfolio/app-1.jpg" title="App 1" data-gallery="portfolio-gallery-app"
-                    class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="/src/pages/portfolio-details.html" title="More Details" class="details-link"><i
-                      class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <div class="portfolio-content h-100">
-                <img src="/src/assets/img/portfolio/product-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Product 1</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="/src/assets/img/portfolio/product-1.jpg" title="Product 1"
-                    data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="/src/pages/portfolio-details.html" title="More Details" class="details-link"><i
-                      class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <div class="portfolio-content h-100">
-                <img src="/src/assets/img/portfolio/branding-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Branding 1</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="/src/assets/img/portfolio/branding-1.jpg" title="Branding 1"
-                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="/src/pages/portfolio-details.html" title="More Details" class="details-link"><i
-                      class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <div class="portfolio-content h-100">
-                <img src="/src/assets/img/portfolio/books-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Books 1</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="/src/assets/img/portfolio/books-1.jpg" title="Branding 1"
-                    data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="/src/pages/portfolio-details.html" title="More Details" class="details-link"><i
-                      class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100">
-                <img src="/src/assets/img/portfolio/app-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>App 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="/src/assets/img/portfolio/app-2.jpg" title="App 2" data-gallery="portfolio-gallery-app"
-                    class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="/src/pages/portfolio-details.html" title="More Details" class="details-link"><i
-                      class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <div class="portfolio-content h-100">
-                <img src="/src/assets/img/portfolio/product-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Product 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="/src/assets/img/portfolio/product-2.jpg" title="Product 2"
-                    data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="/src/pages/portfolio-details.html" title="More Details" class="details-link"><i
-                      class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <div class="portfolio-content h-100">
-                <img src="/src/assets/img/portfolio/branding-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Branding 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="/src/assets/img/portfolio/branding-2.jpg" title="Branding 2"
-                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="/src/pages/portfolio-details.html" title="More Details" class="details-link"><i
-                      class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <div class="portfolio-content h-100">
-                <img src="/src/assets/img/portfolio/books-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Books 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="/src/assets/img/portfolio/books-2.jpg" title="Branding 2"
-                    data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="/src/pages/portfolio-details.html" title="More Details" class="details-link"><i
-                      class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100">
-                <img src="/src/assets/img/portfolio/app-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>App 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="/src/assets/img/portfolio/app-3.jpg" title="App 3" data-gallery="portfolio-gallery-app"
-                    class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="/src/pages/portfolio-details.html" title="More Details" class="details-link"><i
-                      class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <div class="portfolio-content h-100">
-                <img src="/src/assets/img/portfolio/product-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Product 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="/src/assets/img/portfolio/product-3.jpg" title="Product 3"
-                    data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="/src/pages/portfolio-details.html" title="More Details" class="details-link"><i
-                      class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <div class="portfolio-content h-100">
-                <img src="/src/assets/img/portfolio/branding-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Branding 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="/src/assets/img/portfolio/branding-3.jpg" title="Branding 2"
-                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="/src/pages/portfolio-details.html" title="More Details" class="details-link"><i
-                      class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <div class="portfolio-content h-100">
-                <img src="/src/assets/img/portfolio/books-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Books 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="/src/assets/img/portfolio/books-3.jpg" title="Branding 3"
-                    data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="/src/pages/portfolio-details.html" title="More Details" class="details-link"><i
-                      class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-          </div><!-- End Portfolio Container -->
-
+    <section id="portfolio" class="py-5 bg-light">
+        <div class="container">
+            <h2>Portfolio</h2>
+            <div class="row">
+                <!-- Project cards will go here -->
+            </div>
         </div>
+    </section>
 
-      </div>
-
-    </section><!-- /Portfolio Section -->
-
-    <!-- Services Section -->
-    <section id="services" class="services section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Services</h2>
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-          consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
-          in iste officiis commodi quidem hic quas.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon flex-shrink-0"><i class="bi bi-briefcase"></i></div>
-            <div>
-              <h4 class="title"><a href="/src/pages/service-details.html" class="stretched-link">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
-                occaecati cupiditate non provident</p>
-            </div>
-          </div>
-          <!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon flex-shrink-0"><i class="bi bi-card-checklist"></i></div>
-            <div>
-              <h4 class="title"><a href="/src/pages/service-details.html" class="stretched-link">Dolor Sitema</a></h4>
-              <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                commodo consequat tarad limino ata</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon flex-shrink-0"><i class="bi bi-bar-chart"></i></div>
-            <div>
-              <h4 class="title"><a href="/src/pages/service-details.html" class="stretched-link">Sed ut perspiciatis</a>
-              </h4>
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="400">
-            <div class="icon flex-shrink-0"><i class="bi bi-binoculars"></i></div>
-            <div>
-              <h4 class="title"><a href="/src/pages/service-details.html" class="stretched-link">Magni Dolores</a></h4>
-              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                mollit anim id est laborum</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="500">
-            <div class="icon flex-shrink-0"><i class="bi bi-brightness-high"></i></div>
-            <div>
-              <h4 class="title"><a href="/src/pages/service-details.html" class="stretched-link">Nemo Enim</a></h4>
-              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-                praesentium voluptatum deleniti atque</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="600">
-            <div class="icon flex-shrink-0"><i class="bi bi-calendar4-week"></i></div>
-            <div>
-              <h4 class="title"><a href="/src/pages/service-details.html" class="stretched-link">Eiusmod Tempor</a></h4>
-              <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum
-                soluta nobis est eligendi</p>
-            </div>
-          </div><!-- End Service Item -->
-
+    <!-- Blog Section -->
+    <section id="blog" class="py-5">
+        <div class="container">
+            <h2>Blog</h2>
+            <!-- Blog posts grid -->
         </div>
-
-      </div>
-
-    </section><!-- /Services Section -->
+    </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section light-background">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Testimonials</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              },
-              "breakpoints": {
-                "320": {
-                  "slidesPerView": 1,
-                  "spaceBetween": 40
-                },
-                "1200": {
-                  "slidesPerView": 3,
-                  "spaceBetween": 1
-                }
-              }
-            }
-          </script>
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus.
-                    Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="/src/assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid malis quorum
-                    velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="/src/assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis
-                    minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="/src/assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat dolor enim
-                    duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="/src/assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam sunt
-                    culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="/src/assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-          </div>
-          <div class="swiper-pagination"></div>
+    <section id="testimonials" class="py-5 bg-light">
+        <div class="container">
+            <h2>Testimonials</h2>
+            <!-- Testimonials carousel placeholder -->
         </div>
-
-      </div>
-
-    </section><!-- /Testimonials Section -->
+    </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact section">
-      <div class="container">
-        <div class="section-title">
-          <h2>Contact</h2>
-        </div>
-
-        <div class="row gy-4">
-          <!-- Contact Information -->
-          <div class="col-lg-6">
-            <div class="info-item d-flex">
-              <i class="bi bi-geo-alt flex-shrink-0"></i>
-              <div>
-                <h4>Location:</h4>
-                <p>Copenhagen, Denmark</p>
-              </div>
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2>Contact</h2>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/your-profile" target="_blank">LinkedIn</a>
+                <a href="https://github.com/your-username" target="_blank">GitHub</a>
             </div>
-
-            <div class="info-item d-flex">
-              <i class="bi bi-envelope flex-shrink-0"></i>
-              <div>
-                <h4>Email:</h4>
-                <p>william.gram@outlook.com</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Contact Form -->
-          <div class="col-lg-6">
-            <form action="src/forms/contact.php" method="post" class="php-email-form">
-              <div class="row gy-4">
-                <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-                </div>
-                <div class="col-md-6">
-                  <input type="email" name="email" class="form-control" placeholder="Your Email" required>
-                </div>
-                <div class="col-md-12">
-                  <input type="text" name="subject" class="form-control" placeholder="Subject" required>
-                </div>
-                <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
-                </div>
-                <div class="col-md-12 text-center">
-                  <button type="submit">Send Message</button>
-                </div>
-              </div>
-            </form>
-          </div>
         </div>
-      </div>
     </section>
 
-    <!-- Case Studies Section -->
-    <section id="case-studies" class="case-studies">
-      <div class="container">
-        <h2>Case Studies</h2>
-        <div class="case-study">
-          <h3>Data Platform Modernization</h3>
-          <div class="case-study-content">
-            <div class="case-study-text">
-              <p class="case-study-brief">Brief description of the project</p>
-              <ul class="case-study-highlights">
-                <li>Key achievement 1</li>
-                <li>Key achievement 2</li>
-              </ul>
-            </div>
-            <!-- <img src="/src/assets/img/case-studies/architecture-diagram.png" alt="Architecture Diagram"> -->
-          </div>
+    <!-- Footer -->
+    <footer class="py-4 bg-dark text-white">
+        <div class="container text-center">
+            <p>&copy; 2024 SG Data Solutions. All rights reserved.</p>
         </div>
+    </footer>
 
-        <!-- More case studies -->
-      </div>
-    </section>
-
-  </main>
-
-  <footer id="footer" class="footer position-relative light-background">
-
-    <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">iPortfolio</strong> <span>All Rights Reserved</span>
-        </p>
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
-
-  </footer>
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Main JS File -->
-  <script type="module" src="/src/assets/js/main.js"></script>
-
+    <!-- Scripts -->
+    <script type="module" src="/src/js/main.js"></script>
 </body>
-
-</html>
+</html> 
