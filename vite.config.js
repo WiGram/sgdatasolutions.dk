@@ -10,5 +10,8 @@ export default defineConfig({
     },
     outDir: 'dist',
     assetsDir: 'assets'
+  },
+  preview: {
+    open: true
   }
 }) 
