@@ -1096,3 +1096,98 @@ button:focus-visible {
 .navbar .nav-item.dropdown .nav-link[aria-expanded="true"] {
     color: #3498db;
 }
+
+/* Contact section styling */
+#contact {
+    background-color: #f8f9fa;
+    padding: 80px 0;
+}
+
+.contact-container {
+    margin-top: 3rem;
+}
+
+.contact-info-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    height: 100%;
+}
+
+.contact-header {
+    margin-bottom: 2rem;
+}
+
+.contact-header h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.contact-header .lead {
+    color: #6c757d;
+    font-size: 1.1rem;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    width: 2rem;
+    text-align: center;
+    margin-top: 0.25rem;
+}
+
+.contact-text h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: var(--text-dark);
+}
+
+.contact-text p {
+    margin: 0;
+    color: #6c757d;
+}
+
+.contact-text a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-text a:hover {
+    color: #3498db;
+}
+
+.map-container {
+    height: 100%;
+    min-height: 450px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 991px) {
+    .map-container {
+        margin-top: 2rem;
+        min-height: 300px;
+    }
+}
