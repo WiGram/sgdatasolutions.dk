@@ -725,7 +725,11 @@ button:focus-visible {
 }
 
 .project-section {
-    margin-bottom: 4rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 1.5rem;
 }
 
 .project-section h2 {
@@ -798,4 +802,297 @@ button:focus-visible {
 .dropdown-item.active {
     background-color: var(--primary-color);
     color: var(--text-light);
+}
+
+/* Project page specific styles */
+.project-study {
+    padding-top: 80px; /* Account for fixed navbar */
+}
+
+.project-header {
+    background: linear-gradient(45deg, #2c3e50, #3498db);
+    color: white;
+    padding: 4rem 0;
+    margin-bottom: 3rem;
+}
+
+.project-meta {
+    margin-bottom: 1.5rem;
+}
+
+.project-meta .badge {
+    margin-right: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+.milestone-cards {
+    display: flex;
+    gap: 2rem;
+    margin: 3rem 0;
+    justify-content: center;
+}
+
+.milestone-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    flex: 1;
+    max-width: 300px;
+}
+
+.milestone-card i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.milestone-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.milestone-card p {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.milestone-card .date {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .milestone-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .milestone-card {
+        width: 100%;
+    }
+}
+
+.metric-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.metric-card .metric {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.back-button {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(-5px);
+}
+
+.back-button i {
+    font-size: 1.2rem;
+}
+
+/* Add responsive adjustments */
+@media (max-width: 768px) {
+    .back-button {
+        padding: 0.3rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+.breadcrumb-nav {
+    padding: 1rem 0;
+}
+
+.breadcrumb-nav .back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.breadcrumb-nav .back-button:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(-5px);
+}
+
+.breadcrumb-nav .back-button i {
+    font-size: 1.2rem;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .breadcrumb-nav {
+        padding: 0.5rem 0;
+    }
+    
+    .breadcrumb-nav .back-button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Back to top button */
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: none; /* Initially hidden */
+    width: 45px;
+    height: 45px;
+    background: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    opacity: 0.8;
+}
+
+.back-to-top.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-to-top:hover {
+    background: #3498db;
+    transform: translateY(-3px);
+    opacity: 1;
+}
+
+.back-to-top i {
+    font-size: 1.2rem;
+}
+
+/* Project Navigation */
+.project-navigation {
+    padding: 3rem 0;
+    background: #f8f9fa;
+    border-top: 1px solid #eee;
+}
+
+.project-navigation .nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.project-navigation .nav-item {
+    flex: 1;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #2c3e50;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.project-navigation .nav-direction {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.project-navigation .nav-title {
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.project-navigation .nav-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .project-navigation .nav-wrapper {
+        flex-direction: column;
+    }
+}
+
+/* Navigation active state styling */
+.navbar .nav-link {
+    position: relative;
+    padding: 0.5rem 1rem;
+}
+
+/* Underline animation for nav items */
+.navbar .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #3498db;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar .nav-link:hover::after {
+    width: 70%;
+}
+
+/* Active state for main nav items */
+.navbar .nav-item.active .nav-link::after,
+.navbar .nav-link.active::after {
+    width: 70%;
+}
+
+/* Dropdown specific styling */
+.navbar .dropdown-item {
+    position: relative;
+    padding: 0.5rem 1.5rem;
+    transition: all 0.2s ease;
+}
+
+/* Active state for dropdown items */
+.navbar .dropdown-item.active {
+    background-color: rgba(52, 152, 219, 0.1);
+    color: #3498db;
+    font-weight: 500;
+}
+
+/* Hover effect for dropdown items */
+.navbar .dropdown-item:hover {
+    background-color: rgba(52, 152, 219, 0.05);
+    transform: translateX(5px);
+}
+
+/* Active dropdown parent */
+.navbar .nav-item.dropdown.show .nav-link,
+.navbar .nav-item.dropdown .nav-link[aria-expanded="true"] {
+    color: #3498db;
 }

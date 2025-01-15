@@ -5,7 +5,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: 'index.html',
-        'projects/regulatory-reporting': 'projects/regulatory-reporting/index.html'
+        'projects/regulatory-reporting': 'projects/regulatory-reporting/index.html',
+        'projects/performance-pay': 'projects/performance-pay/index.html'
       }
     },
     outDir: 'dist',

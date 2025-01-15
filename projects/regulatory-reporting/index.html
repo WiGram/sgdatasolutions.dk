@@ -10,10 +10,13 @@
     
     <!-- Your CSS -->
     <link rel="stylesheet" href="/src/css/style.css">
+    
+    <!-- Bootstrap Icons CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
     <!-- Add Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="/">SG Data Solutions</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -22,21 +25,28 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/#about">About</a>
+                        <a class="nav-link" href="/#hero">Home</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="/#projects" role="button" data-bs-hover="dropdown" aria-expanded="false">
-                            Projects
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/projects/regulatory-reporting/">Regulatory Reporting</a></li>
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#about">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/#competencies">Competencies</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/#cv">CV</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/#projects" role="button" data-bs-hover="dropdown" aria-expanded="false">
+                            Projects
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item active" href="/projects/regulatory-reporting/">Regulatory Reporting</a></li>
+                            <li><a class="dropdown-item" href="/projects/performance-pay/">Performance Pay</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#blog">Blog</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/#contact">Contact</a>
@@ -49,38 +59,159 @@
     <article class="project-study">
         <header class="project-header">
             <div class="container">
-                <h1>Regulatory Reporting Solution</h1>
-                <p class="lead">Modernizing financial reporting for a major Nordic institution</p>
+                <div class="breadcrumb-nav mb-4">
+                    <a href="/#projects" class="back-button">
+                        <i class="bi bi-arrow-left-circle-fill"></i> Back to Projects
+                    </a>
+                </div>
+                <div class="project-meta">
+                    <span class="badge bg-primary">Financial Services</span>
+                    <span class="badge bg-secondary">Data Migration</span>
+                    <span class="badge bg-info">Regulatory Compliance</span>
+                </div>
+                <h1>Enterprise Data Warehouse Regulatory Reporting Solution</h1>
+                <p class="lead">Architecting and implementing a modern regulatory reporting system for a major Nordic financial data center</p>
+                <div class="milestone-cards">
+                    <div class="milestone-card">
+                        <i class="bi bi-rocket-takeoff"></i>
+                        <h3>Initial Release</h3>
+                        <p>First set of regulatory reports</p>
+                        <span class="date">January 2022</span>
+                    </div>
+                    <div class="milestone-card">
+                        <i class="bi bi-graph-up"></i>
+                        <h3>Major Update</h3>
+                        <p>Extended reporting scope</p>
+                        <span class="date">January 2023</span>
+                    </div>
+                    <div class="milestone-card">
+                        <i class="bi bi-shield-check"></i>
+                        <h3>Hypercare</h3>
+                        <p>Stabilization & optimization</p>
+                        <span class="date">Jan-Feb 2024</span>
+                    </div>
+                </div>
             </div>
         </header>
         
         <div class="container">
-            <section class="project-section">
-                <h2>Overview</h2>
-                <p>Migration of regulatory reporting from a legacy mainframe system to a modern Enterprise Data Warehouse solution for a major Nordic financial services data center. The project focused on maintaining compliance while modernizing the technical infrastructure.</p>
-            </section>
-            
-            <section class="project-section">
-                <h2>Technical Details</h2>
-                <ul>
-                    <li>Built specialized data mart on EDW platform</li>
-                    <li>Implemented reconciliation with existing financial reporting systems</li>
-                    <li>Developed user-friendly mapping interface for non-technical staff</li>
-                    <li>Created data models aligned with regulatory requirements across Nordic countries, EU, and US</li>
-                </ul>
-            </section>
-            
-            <section class="project-section">
-                <h2>Results & Impact</h2>
-                <ul>
-                    <li>Successfully migrated from mainframe to modern EDW solution</li>
-                    <li>Enabled non-technical staff to manage reporting mappings</li>
-                    <li>Achieved compliance with multiple regulatory frameworks</li>
-                    <li>Established reconciliation with existing financial systems</li>
-                </ul>
-            </section>
+            <div class="row">
+                <div class="col-lg-8">
+                    <section class="project-section">
+                        <h2>Overview</h2>
+                        <p>Had a integral role in leading a successful migration of critical regulatory reporting from legacy mainframe systems to a modern Enterprise Data Warehouse solution. The project served multiple Nordic financial institutions, handling sensitive financial data affecting millions of customers. As the technical lead, I managed the entire data transformation lifecycle while ensuring continuous compliance with multiple regulatory frameworks.</p>
+                        <p>Project Duration: 19 months with two successful production releases</p>
+                    </section>
+                    
+                    <section class="project-section">
+                        <h2>Key Responsibilities</h2>
+                        <ul>
+                            <li>Architected and implemented a comprehensive data mart solution on the Enterprise Data Warehouse platform</li>
+                            <li>Analyzed and interpreted regulatory reporting requirements from various financial authorities</li>
+                            <li>Created detailed object documentation and technical specifications for distinct regulatory reports related to personal and corporate business reporting</li>
+                            <li>Designed and implemented complex table schemas in Teradata SQL</li>
+                            <li>Mapped and transformed source data from hundreds of tables into a standardized reporting format</li>
+                            <li>Developed automated data processing workflows for various reporting frequencies (monthly, quarterly, bi-annual, and annual)</li>
+                            <li>Implemented period-specific data controls to ensure accurate reporting timeframes</li>
+                        </ul>
+                    </section>
+                    
+                    <section class="project-section">
+                        <h2>Technical Implementation</h2>
+                        <ul>
+                            <li>Designed dimensional data models and fact tables for centralized reporting data mart</li>
+                            <li>Created report-specific denormalized tables optimized for regulatory submissions</li>
+                            <li>Implemented robust data transformation pipelines using Teradata SQL</li>
+                            <li>Established comprehensive data reconciliation processes</li>
+                            <li>Built flexible mapping interfaces for reporting specialists</li>
+                            <li>Enhanced mappings to feed into the data mart, enabling non-technical staff to manage reporting mappings</li>
+                        </ul>
+                    </section>
+                    
+                    <section class="project-section">
+                        <h2>Results & Impact</h2>
+                        <ul>
+                            <li>Successfully migrated from mainframe to modern EDW solution</li>
+                            <li>Enabled non-technical staff to manage reporting mappings</li>
+                            <li>Achieved compliance with multiple regulatory frameworks</li>
+                            <li>Established reconciliation with existing financial systems</li>
+                        </ul>
+                    </section>
+                    
+                    <section class="project-section">
+                        <h2>Stakeholder Collaboration</h2>
+                        <div class="stakeholder-grid">
+                            <div class="stakeholder-card">
+                                <i class="bi bi-bank"></i>
+                                <h3>Regulatory Authorities</h3>
+                                <ul>
+                                    <li>Regular alignment on reporting requirements</li>
+                                    <li>Compliance validation</li>
+                                    <li>Technical specification reviews</li>
+                                </ul>
+                            </div>
+                            <div class="stakeholder-card">
+                                <i class="bi bi-building"></i>
+                                <h3>Financial Institutions</h3>
+                                <ul>
+                                    <li>User acceptance testing</li>
+                                    <li>Feedback integration</li>
+                                    <li>Process optimization</li>
+                                    <li>Source system data correction</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-lg-4">
+                    <div class="project-sidebar">
+                        <div class="metric-card">
+                            <h3>Project Scale</h3>
+                            <div class="metric">20+</div>
+                            <div class="label">Regulatory Reports</div>
+                        </div>
+                        <div class="metric-card">
+                            <h3>Data Sources</h3>
+                            <div class="metric">100+</div>
+                            <div class="label">EDW Tables</div>
+                        </div>
+                        <div class="metric-card">
+                            <h3>Duration</h3>
+                            <div class="metric">19</div>
+                            <div class="label">Months</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </article>
+
+    <!-- Project Navigation -->
+    <div class="project-navigation">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="#" class="nav-item prev">
+                    <span class="nav-direction">
+                        <i class="bi bi-arrow-left"></i>
+                        Previous Project
+                    </span>
+                    <span class="nav-title">Data Analytics Platform</span>
+                </a>
+                <a href="#" class="nav-item next">
+                    <span class="nav-direction">
+                        Next Project
+                        <i class="bi bi-arrow-right"></i>
+                    </span>
+                    <span class="nav-title">Cloud Migration</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to top button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
