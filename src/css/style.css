@@ -1191,3 +1191,98 @@ button:focus-visible {
         min-height: 300px;
     }
 }
+
+.cv-sidebar {
+    position: sticky;
+    top: 100px;
+}
+
+.sidebar-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Board Position card */
+.board-position h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.board-position h4 {
+    font-size: 1rem;
+    margin: 0.8rem 0 0.3rem;
+}
+
+.position-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+    flex-wrap: wrap;
+}
+
+/* Education card */
+.education-item {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.education-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.education-item h4 {
+    font-size: 1rem;
+    margin: 0.8rem 0 0.3rem;
+}
+
+.education-description {
+    font-size: 0.9rem;
+    margin-top: 0.4rem !important;
+    line-height: 1.4;
+}
+
+/* Shared badge styling */
+.position-meta .badge {
+    font-size: 0.75rem;
+    padding: 0.4em 0.8em;
+}
+
+/* Shared text styling */
+.position-description,
+.education-item p:not(.education-description) {
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Board Position styling */
+.board-item {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0,0,0,0.05);  /* Same separator as education */
+}
+
+.board-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.board-item h4 {
+    font-size: 1rem;
+    margin: 0.8rem 0 0.3rem;
+}
+
+.position-description {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-top: 0.4rem;
+    line-height: 1.4;
+}
