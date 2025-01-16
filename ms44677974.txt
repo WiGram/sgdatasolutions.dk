@@ -1,0 +1,5 @@
+﻿{
+  "Description": "Domæneejerskabsbekræftelsesfil for Microsoft 365 – placér i webstedets rod",
+  "Domain": "sgdatasolutions.dk",
+  "Id": "f09138ba-4609-46b4-89b6-c8eb137d699d"
+}
