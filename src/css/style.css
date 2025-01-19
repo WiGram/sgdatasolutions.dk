@@ -107,6 +107,39 @@ body {
   transform: translateY(-2px);
 }
 
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.scroll-down {
+    display: block;
+    color: var(--text-light);
+    font-size: 2.5rem;
+    text-decoration: none;
+    animation: bounce 2s infinite;
+    opacity: 0.9;
+}
+
+.scroll-down:hover {
+    opacity: 1;
+    color: var(--text-light);
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
 section {
   width: 100%;
   padding: 80px 0;
@@ -665,17 +698,6 @@ button:focus-visible {
 .project-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.project-card::after {
-    content: '\f065';  /* FontAwesome expand icon */
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;  /* Required for FA solid icons */
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    opacity: 0.5;
-    font-size: 0.9rem;
 }
 
 .project-card:hover::after {
@@ -1285,4 +1307,25 @@ button:focus-visible {
     color: #6c757d;
     margin-top: 0.4rem;
     line-height: 1.4;
+}
+
+.project-card {
+    position: relative;  /* Ensure this is set for absolute positioning to work */
+}
+
+.click-indicator {
+    position: absolute;
+    top: 1rem;          /* Align with tags */
+    right: 1rem;        /* Align with card padding */
+    z-index: 1;         /* Ensure it's above other elements */
+}
+
+.click-indicator i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    opacity: 0.7;
+}
+
+.project-card:hover .click-indicator i {
+    opacity: 1;
 }
