@@ -57,15 +57,19 @@ body {
 } */
 
 .navbar {
-  background-color: var(--primary-color);
+  /* Remove the solid background color */
+  background-color: #646cff;
+  /* background: linear-gradient(270deg, #646cff, #1a237e); */
   color: var(--secondary-color);
+  padding: 1rem 0;
+  transition: all 0.3s ease;
 }
 
 #hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(225deg, #646cff, #1a237e);
   color: var(--text-light);
 }
 
