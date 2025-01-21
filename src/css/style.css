@@ -291,16 +291,31 @@ button:focus-visible {
 }
 
 @media (max-width: 768px) {
+  #hero .text-container {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+  }
+  
   #hero h1 {
     font-size: 2.5rem;
   }
   
+  #hero h2 {
+    font-size: 1.8rem;
+  }
+  
   #hero p {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
   }
   
   section {
     padding: 60px 0;
+  }
+
+  /* Hide diagram on mobile */
+  .diagram-container {
+    display: none;
   }
 }
 
