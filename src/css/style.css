@@ -1731,3 +1731,17 @@ button:focus-visible {
         border-bottom: none;
     }
 }
+
+
+.mobile-nav-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.expand-button {
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    color: var(--text-light);
+}
