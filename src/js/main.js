@@ -105,15 +105,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Handle mobile menu expansion
-    const megaMenuTriggers = document.querySelectorAll('.has-megamenu > .nav-link');
-    megaMenuTriggers.forEach(trigger => {
-        trigger.addEventListener('click', function(e) {
-            if (window.innerWidth < 992) {
-                e.preventDefault();
-                this.closest('.has-megamenu').classList.toggle('show');
-                this.setAttribute('aria-expanded', 
-                    this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'
-                );
+    const expandButtons = document.querySelectorAll('.expand-button');
+    expandButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation(); // Prevent triggering parent link
+            const submenu = this.closest('.has-megamenu').querySelector('.collapse');
+            const icon = this.querySelector('.bi-chevron-right');
+            
+            // Toggle the submenu
+            if (submenu) {
+                submenu.classList.toggle('show');
+                icon.style.transform = submenu.classList.contains('show') ? 'rotate(90deg)' : '';
             }
         });
     });
