@@ -21,8 +21,15 @@
             <a class="navbar-brand" href="#">SG Data Solutions</a>
             
             <!-- Mobile Toggle Button -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button 
+                class="navbar-toggler" 
+                type="button" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" 
+                aria-expanded="false" 
+                aria-label="Toggle navigation"
+            >
                 <span class="navbar-toggler-icon"></span>
             </button>
             
@@ -41,21 +48,56 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#cv">CV</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" 
-                           href="#" 
-                           role="button" 
-                           data-bs-toggle="dropdown" 
-                           aria-expanded="false">
+                    <li class="nav-item has-megamenu">
+                        <a class="nav-link" href="#projects">
                             Projects
+                            <i class="bi bi-chevron-down d-none d-lg-inline"></i>  <!-- Only show on large screens -->
+                            <i class="bi bi-chevron-right d-lg-none"></i>  <!-- Only show on mobile -->
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/projects/regulatory-reporting/">Regulatory Reporting</a></li>
-                            <li><a class="dropdown-item" href="/projects/performance-pay/">Performance Pay</a></li>
-                        </ul>
+                        <div class="megamenu">
+                            <div class="container">
+                                <div class="menu-items">
+                                    <a href="/projects/regulatory-reporting/" class="menu-item">
+                                        <h4>Regulatory Reporting</h4>
+                                        <p>Enterprise data warehouse solution for regulatory reporting</p>
+                                        <div class="tags">
+                                            <span class="badge bg-primary">Financial Services</span>
+                                            <span class="badge bg-secondary">Data Migration</span>
+                                        </div>
+                                    </a>
+                                    <a href="/projects/performance-pay/" class="menu-item">
+                                        <h4>Performance Pay</h4>
+                                        <p>Data-driven transformation of performance pay structures</p>
+                                        <div class="tags">
+                                            <span class="badge bg-info">HR Analytics</span>
+                                            <span class="badge bg-success">Financial Modeling</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#blog">Blog</a>
+                    <li class="nav-item has-megamenu">
+                        <a class="nav-link" href="#blog">
+                            Blog
+                            <i class="bi bi-chevron-down d-none d-lg-inline"></i>  <!-- Only show on large screens -->
+                            <i class="bi bi-chevron-right d-lg-none"></i>  <!-- Only show on mobile -->
+                        </a>
+                        <div class="megamenu">
+                            <div class="container">
+                                <div class="menu-items">
+                                    <a href="/blog_posts/api-audit-logging/" class="menu-item">
+                                        <h4>API Audit Logging</h4>
+                                        <p>Data-driven transformation...</p>
+                                        <div class="tags">
+                                            <span class="badge bg-primary">FastAPI</span>
+                                            <span class="badge bg-secondary">Logging</span>
+                                            <span class="badge bg-info">Audit</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
@@ -107,8 +149,11 @@
             <div class="about-story">
                 <h3>My Journey</h3>
                 <p>
-                    Over the past eight years in data engineering and analytics, I've partnered with organizations across 
-                    finance, public sector, and consulting - both as an in-house specialist and trusted advisor — to optimize 
+                    My journey started with an education in mathematical finance and economics and a job in risk management at the Danish Central Bank. 
+                    Since then, I have gone from data analytics and dashboarding through to building datamarts and now to building data platforms.
+                </p>
+                <p>
+                    I have partnered with organizations across finance, public sector, and consulting - both as an in-house specialist and trusted advisor — to optimize 
                     data infrastructure and derive meaningful insights. My approach combines technical expertise with business 
                     acumen to deliver practical, scalable solutions.
                 </p>
@@ -131,10 +176,17 @@
             <div class="about-philosophy">
                 <h3>My Approach</h3>
                 <p>
-                    I believe in building solutions that are not just technically sound but also 
-                    business-focused and scalable. Every project starts with understanding your 
-                    unique challenges and goals. Through collaborative development and knowledge transfer, 
-                    I ensure your team is empowered to maintain and evolve the solution long after delivery.
+                    My approach starts with people and purpose. Building something remarkable 
+                    means understanding business objectives, team dynamics, and end-user needs. 
+                    I strive to nurture a culture of collaboration, engagement, and empowerment,
+                    always contributing to an environment where every team member can thrive and 
+                    succeed together.
+                </p>
+                <p>
+                    Every project begins with understanding the unique challenges and goals at hand. 
+                    Through collaborative development and well-documented processes, I commit to 
+                    delivering a solution designed for smooth integration into your existing team and 
+                    processes.
                 </p>
             </div>
             </div>
@@ -439,7 +491,11 @@
             <div class="row g-4">
                 <!-- Project Card -->
                 <div class="col-md-6 col-lg-4">
-                    <div class="card project-card h-100" data-bs-toggle="modal" data-bs-target="#project1Modal">
+                    <div 
+                        class="card project-card h-100" 
+                        data-bs-toggle="modal" 
+                        data-bs-target="#project1Modal"
+                    >
                         <div class="card-body">
                             <!-- Add click indicator -->
                             <div class="click-indicator">
@@ -469,7 +525,11 @@
 
                 <!-- Add this card in the Projects Section after the Regulatory Reporting card -->
                 <div class="col-md-6 col-lg-4">
-                    <div class="card project-card h-100" data-bs-toggle="modal" data-bs-target="#performancePayModal">
+                    <div 
+                        class="card project-card h-100" 
+                        data-bs-toggle="modal" 
+                        data-bs-target="#performancePayModal"
+                    >
                         <div class="card-body">
                             <!-- Add click indicator -->
                             <div class="click-indicator">
@@ -504,11 +564,37 @@
     <!-- Blog Section -->
     <section id="blog" class="py-5">
         <div class="container">
-            <h2>Blog</h2>
-            <!-- Blog posts grid -->
+            <div class="section-header">
+                <h2>Blog</h2>
+                <p class="lead">My blog posts on data, technology and business</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <a href="/blog_posts/api-audit-logging/" class="blog-card-link">
+                        <div class="card blog-card h-100">
+                            <div class="card-body">
+                                <div class="click-indicator">
+                                    <i class="bi bi-box-arrow-up-right"></i>
+                                </div>
+                                
+                                <div class="blog-tags mb-2">
+                                    <span class="badge bg-primary">API Development</span>
+                                    <span class="badge bg-secondary">FastAPI</span>
+                                </div>
+                                <h5 class="card-title">FastAPI Audit Logging</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Performant audit logging for Application Insights</h6>
+                                <p class="card-text">A journey from logging setup through Azure handlers to audit logging middleware.</p>
+                                <div class="blog-footer">
+                                    <span class="date">January 2025</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
-
+    
     <!-- Testimonials Section -->
     <section id="testimonials" class="py-5 bg-light">
         <div class="container">

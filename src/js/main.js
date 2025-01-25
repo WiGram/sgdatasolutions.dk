@@ -103,4 +103,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Handle mobile menu expansion
+    const megaMenuTriggers = document.querySelectorAll('.has-megamenu > .nav-link');
+    megaMenuTriggers.forEach(trigger => {
+        trigger.addEventListener('click', function(e) {
+            if (window.innerWidth < 992) {
+                e.preventDefault();
+                this.closest('.has-megamenu').classList.toggle('show');
+                this.setAttribute('aria-expanded', 
+                    this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'
+                );
+            }
+        });
+    });
 }) 

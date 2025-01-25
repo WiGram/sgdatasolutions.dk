@@ -36,17 +36,55 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/#cv">CV</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="/#projects" role="button" data-bs-hover="dropdown" aria-expanded="false">
+                    <li class="nav-item has-megamenu">
+                        <a class="nav-link" href="/#projects">
                             Projects
+                            <i class="bi bi-chevron-down d-none d-lg-inline"></i>  <!-- Only show on large screens -->
+                            <i class="bi bi-chevron-right d-lg-none"></i>  <!-- Only show on mobile -->
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/projects/regulatory-reporting/">Regulatory Reporting</a></li>
-                            <li><a class="dropdown-item active" href="/projects/performance-pay/">Performance Pay</a></li>
-                        </ul>
+                        <div class="megamenu">
+                            <div class="container">
+                                <div class="row g-4">
+                                    <div class="col-lg-4">
+                                        <div class="menu-card">
+                                            <span class="badge bg-primary">Financial Services</span>
+                                            <h4>Regulatory Reporting</h4>
+                                            <p>Enterprise data warehouse solution...</p>
+                                            <a href="/projects/regulatory-reporting/" class="stretched-link"></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="menu-card">
+                                            <span class="badge bg-secondary">HR Analytics</span>
+                                            <h4>Performance Pay</h4>
+                                            <p>Data-driven transformation...</p>
+                                            <a href="/projects/performance-pay/" class="stretched-link"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/#blog">Blog</a>
+                    <li class="nav-item has-megamenu">
+                        <a class="nav-link" href="#blog">
+                            Blog
+                            <i class="bi bi-chevron-down d-none d-lg-inline"></i>  <!-- Only show on large screens -->
+                            <i class="bi bi-chevron-right d-lg-none"></i>  <!-- Only show on mobile -->
+                        </a>
+                        <div class="megamenu">
+                            <div class="container">
+                                <div class="row g-4">
+                                    <div class="col-lg-4">
+                                        <div class="menu-card">
+                                            <span class="badge bg-primary">Financial Services</span>
+                                            <h4>API Audit Logging</h4>
+                                            <p>Data-driven transformation...</p>
+                                            <a href="/blog_posts/api-audit-logging/" class="stretched-link"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/#contact">Contact</a>

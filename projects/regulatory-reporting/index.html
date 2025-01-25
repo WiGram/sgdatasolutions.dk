@@ -18,10 +18,23 @@
     <!-- Add Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
+            <!-- Brand -->
             <a class="navbar-brand" href="/">SG Data Solutions</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            
+            <!-- Mobile Toggle Button -->
+            <button 
+                class="navbar-toggler" 
+                type="button" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" 
+                aria-expanded="false" 
+                aria-label="Toggle navigation"
+            >
                 <span class="navbar-toggler-icon"></span>
             </button>
+            
+            <!-- Navigation Items -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
@@ -36,17 +49,57 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/#cv">CV</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="/#projects" role="button" data-bs-hover="dropdown" aria-expanded="false">
+                    <li class="nav-item has-megamenu">
+                        <a class="nav-link" href="/#projects">
                             Projects
+                            <i class="bi bi-chevron-down d-none d-lg-inline"></i>  <!-- Only show on large screens -->
+                            <i class="bi bi-chevron-right d-lg-none"></i>  <!-- Only show on mobile -->
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item active" href="/projects/regulatory-reporting/">Regulatory Reporting</a></li>
-                            <li><a class="dropdown-item" href="/projects/performance-pay/">Performance Pay</a></li>
-                        </ul>
+                        <div class="megamenu">
+                            <div class="container">
+                                <div class="menu-items">
+                                    <a href="/projects/regulatory-reporting/" class="menu-item">
+                                        <h4>Regulatory Reporting</h4>
+                                        <p>Enterprise data warehouse solution...</p>
+                                        <div class="tags">
+                                            <span class="badge bg-primary">Financial Services</span>
+                                            <span class="badge bg-secondary">Data Migration</span>
+                                            <span class="badge bg-info">Regulatory Compliance</span>
+                                        </div>
+                                    </a>
+                                    <a href="/projects/performance-pay/" class="menu-item">
+                                        <h4>Performance Pay</h4>
+                                        <p>Data-driven transformation...</p>
+                                        <div class="tags">
+                                            <span class="badge bg-info">HR Analytics</span>
+                                            <span class="badge bg-success">Financial Modeling</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/#blog">Blog</a>
+                    <li class="nav-item has-megamenu">
+                        <a class="nav-link" href="#blog">
+                            Blog
+                            <i class="bi bi-chevron-down d-none d-lg-inline"></i>  <!-- Only show on large screens -->
+                            <i class="bi bi-chevron-right d-lg-none"></i>  <!-- Only show on mobile -->
+                        </a>
+                        <div class="megamenu">
+                            <div class="container">
+                                <div class="menu-items">
+                                    <a href="/blog_posts/api-audit-logging/" class="menu-item">
+                                        <h4>API Audit Logging</h4>
+                                        <p>Data-driven transformation...</p>
+                                        <div class="tags">
+                                            <span class="badge bg-primary">FastAPI</span>
+                                            <span class="badge bg-secondary">Logging</span>
+                                            <span class="badge bg-info">Audit</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/#contact">Contact</a>
