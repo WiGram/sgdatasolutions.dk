@@ -120,4 +120,34 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Handle menu header clicks
+    const menuHeaders = document.querySelectorAll('.menu-header');
+    menuHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            // Find and click the navbar toggler if it's visible (mobile view)
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            if (window.getComputedStyle(navbarToggler).display !== 'none') {
+                navbarToggler.click();
+            }
+        });
+    });
+
+    // Handle navbar toggler clicks
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    navbarToggler.addEventListener('click', () => {
+        // If opening the navbar (not closing)
+        if (navbarToggler.getAttribute('aria-expanded') === 'false') {
+            // Find and collapse any open submenus
+            const openSubmenus = document.querySelectorAll('.submenu.collapse.show');
+            openSubmenus.forEach(submenu => {
+                submenu.classList.remove('show');
+                // Find and update the associated trigger
+                const trigger = document.querySelector(`[data-bs-target="#${submenu.id}"]`);
+                if (trigger) {
+                    trigger.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+    });
 }) 

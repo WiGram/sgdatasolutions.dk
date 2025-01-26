@@ -23,36 +23,80 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="/">SG Data Solutions</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <!-- Brand -->
+            <a class="navbar-brand" href="#">SG Data Solutions</a>
+            
+            <!-- Mobile Toggle Button -->
+            <button 
+                class="navbar-toggler" 
+                type="button" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" 
+                aria-expanded="false" 
+                aria-label="Toggle navigation"
+            >
                 <span class="navbar-toggler-icon"></span>
             </button>
+            
+            <!-- Navigation Items -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/#hero">Home</a>
+                        <a class="nav-link" href="#hero">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/#about">About</a>
+                        <a class="nav-link" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/#competencies">Competencies</a>
+                        <a class="nav-link" href="#competencies">Competencies</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/#cv">CV</a>
+                        <a class="nav-link" href="#cv">CV</a>
                     </li>
                     <li class="nav-item has-megamenu">
-                        <a class="nav-link" href="/#projects">
+                        <!-- Mobile/small screen version -->
+                        <a class="nav-link d-lg-none" href="#" data-bs-toggle="collapse" data-bs-target="#projectsSubmenu" aria-expanded="false">
                             Projects
-                            <i class="bi bi-chevron-down d-none d-lg-inline"></i>  <!-- Only show on large screens -->
-                            <i class="bi bi-chevron-right d-lg-none"></i>  <!-- Only show on mobile -->
+                            <i class="bi bi-chevron-right"></i>
                         </a>
-                        <div class="megamenu">
+                        <div class="submenu collapse" id="projectsSubmenu">
+                            <!-- "View All" link at the top -->
+                            <a href="/#projects" class="menu-header">
+                                View All Projects
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                            <div class="menu-items">
+                                <a href="/projects/regulatory-reporting/" class="menu-item">
+                                    <h4>Regulatory Reporting</h4>
+                                    <p>Enterprise data warehouse solution for regulatory reporting</p>
+                                    <div class="tags">
+                                        <span class="badge bg-primary">Financial Services</span>
+                                        <span class="badge bg-secondary">Data Migration</span>
+                                    </div>
+                                </a>
+                                <a href="/projects/performance-pay/" class="menu-item">
+                                    <h4>Performance Pay</h4>
+                                    <p>Data-driven transformation of performance pay structures</p>
+                                    <div class="tags">
+                                        <span class="badge bg-info">HR Analytics</span>
+                                        <span class="badge bg-success">Financial Modeling</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Large screen version -->
+                        <a class="nav-link d-none d-lg-block" href="/#projects">
+                            Projects
+                            <i class="bi bi-chevron-right"></i>
+                        </a>
+                        <div class="megamenu d-none d-lg-block">
                             <div class="container">
                                 <div class="menu-items">
                                     <a href="/projects/regulatory-reporting/" class="menu-item">
                                         <h4>Regulatory Reporting</h4>
-                                        <p>Enterprise data warehouse solution...</p>
+                                        <p>Enterprise data warehouse solution for regulatory reporting</p>
                                         <div class="tags">
                                             <span class="badge bg-primary">Financial Services</span>
                                             <span class="badge bg-secondary">Data Migration</span>
@@ -60,7 +104,7 @@
                                     </a>
                                     <a href="/projects/performance-pay/" class="menu-item">
                                         <h4>Performance Pay</h4>
-                                        <p>Data-driven transformation...</p>
+                                        <p>Data-driven transformation of performance pay structures</p>
                                         <div class="tags">
                                             <span class="badge bg-info">HR Analytics</span>
                                             <span class="badge bg-success">Financial Modeling</span>
@@ -71,17 +115,41 @@
                         </div>
                     </li>
                     <li class="nav-item has-megamenu">
-                        <a class="nav-link" href="#blog">
+                        <!-- Mobile/small screen version -->
+                        <a class="nav-link d-lg-none" href="#" data-bs-toggle="collapse" data-bs-target="#blogSubmenu" aria-expanded="false">
                             Blog
-                            <i class="bi bi-chevron-down d-none d-lg-inline"></i>  <!-- Only show on large screens -->
-                            <i class="bi bi-chevron-right d-lg-none"></i>  <!-- Only show on mobile -->
+                            <i class="bi bi-chevron-right"></i>
                         </a>
-                        <div class="megamenu">
+                        <div class="submenu collapse" id="blogSubmenu">
+                            <!-- "View All" link at the top -->
+                            <a href="/#blog" class="menu-header">
+                                View All Blog Posts
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                            <div class="menu-items">
+                                <a href="/blog_posts/api-audit-logging/" class="menu-item">
+                                    <h4>API Audit Logging</h4>
+                                    <p>Data-driven transformation...</p>
+                                    <div class="tags">
+                                        <span class="badge bg-primary">FastAPI</span>
+                                        <span class="badge bg-secondary">Logging</span>
+                                        <span class="badge bg-info">Audit</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Large screen version -->
+                        <a class="nav-link d-none d-lg-block" href="/#blog">
+                            Blog
+                            <i class="bi bi-chevron-right"></i>
+                        </a>
+                        <div class="megamenu d-none d-lg-block">
                             <div class="container">
                                 <div class="menu-items">
                                     <a href="/blog_posts/api-audit-logging/" class="menu-item">
                                         <h4>API Audit Logging</h4>
-                                        <p>Adding audit logging to FastAPI and Azure Application Insights...</p>
+                                        <p>Data-driven transformation...</p>
                                         <div class="tags">
                                             <span class="badge bg-primary">FastAPI</span>
                                             <span class="badge bg-secondary">Logging</span>
@@ -93,7 +161,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/#contact">Contact</a>
+                        <a class="nav-link" href="#contact">Contact</a>
                     </li>
                 </ul>
             </div>

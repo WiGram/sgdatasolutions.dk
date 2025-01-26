@@ -1745,3 +1745,38 @@ button:focus-visible {
     padding: 0.5rem;
     color: var(--text-light);
 }
+
+.menu-header {
+    display: block;
+    padding: 0.75rem 1.25rem;
+    color: var(--text-light);
+    background: rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-header:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--text-light);
+}
+
+/* Base styles for chevron */
+.nav-link .bi-chevron-right {
+    display: inline-block;  /* Important for rotation */
+    transition: transform 0.3s ease;
+}
+
+/* Mobile menu expansion */
+.nav-link[aria-expanded="true"] .bi-chevron-right {
+    transform: rotate(90deg);
+}
+
+/* Large screen hover */
+@media (min-width: 992px) {
+    .nav-item.has-megamenu:hover .bi-chevron-right {
+        transform: rotate(90deg);
+    }
+}
