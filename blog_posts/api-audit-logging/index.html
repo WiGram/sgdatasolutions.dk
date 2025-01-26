@@ -185,63 +185,176 @@
                 </div>
                 <h1>Optimizing FastAPI Audit Logging: Balancing Performance and Compliance</h1>
                 <p class="lead">A journey from blocking middleware to high-performance audit logging while maintaining security requirements.</p>
-                <div class="blog-info">
-                    <span class="date">March 2024</span>
-                    <span class="reading-time">15 min read</span>
+                <div class="milestone-cards">
+                    <div class="milestone-card">
+                        <i class="bi bi-exclamation-circle"></i>
+                        <h3>Challenge</h3>
+                        <p>Lack of audit logging</p>
+                        <div class="metric">Must integrate with Azure Application Insights</div>
+                        <span class="label">Constraint: unchanged endpoint performance</span>
+                    </div>
+                    <div class="milestone-card">
+                        <i class="bi bi-lightning"></i>
+                        <h3>Solution</h3>
+                        <p>Async logging with Azure Application Insights</p>
+                        <div class="metric">&lt;1ms</div>
+                        <span class="label">Final Response Time</span>
+                    </div>
+                    <div class="milestone-card">
+                        <i class="bi bi-check2-circle"></i>
+                        <h3>Impact</h3>
+                        <p>Full audit compliance with minimal overhead</p>
+                        <div class="metric">100%</div>
+                        <span class="label">Audit Coverage</span>
+                    </div>
                 </div>
             </div>
         </header>
-        
+
         <div class="container">
             <div class="row">
+                <!-- TOC -->
+                <div class="col-lg-3 toc-wrapper">
+                    <div class="toc-sidebar">
+                        <h4>Contents</h4>
+                        <nav class="toc" aria-labelledby="toc-title">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#introduction">Introduction</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#initial-setup">Setting Up Basic Audit Logging</a>
+                                    <ul class="nav flex-column ms-3">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#requirements">Initial Requirements</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#implementation">First Implementation</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#azure-insights">Integrating with Azure Application Insights</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#performance-issues">Addressing Performance Bottlenecks</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#final-solution">The Optimized Solution</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#lessons-learned">Key Takeaways</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- Main content -->
                 <div class="col-lg-9">
                     <div class="blog-content">
                         <section id="introduction">
                             <h2>Introduction</h2>
-                            <p>When building enterprise APIs, we often face competing requirements...</p>
+                            <p>When building enterprise APIs, we often face competing requirements: comprehensive audit logging for security and compliance, while maintaining high-performance responses for end-users. This was exactly the challenge I faced when implementing a FastAPI-based data exchange API that needed to log detailed audit information to Azure Application Insights.</p>
+                            
+                            <p>In this post, I'll walk you through my journey from a basic blocking implementation to a high-performance solution that maintains full audit capabilities without compromising user experience.</p>
                         </section>
 
                         <section id="initial-setup">
                             <h2>Setting Up Basic Audit Logging</h2>
-                            <h3>Initial Requirements</h3>
-                            <p>Our audit logging needed to capture...</p>
+                            
+                            <section id="requirements">
+                                <h3>Initial Requirements</h3>
+                                <p>The audit logging system needed to capture:</p>
+                                <ul>
+                                    <li>Request details (method, path, query parameters)</li>
+                                    <li>User information from Azure AD tokens</li>
+                                    <li>Request body content for POST/PUT operations</li>
+                                    <li>Response status and timing</li>
+                                    <li>Geographic location and client IP</li>
+                                </ul>
+                            </section>
+
+                            <section id="implementation">
+                                <h3>First Implementation</h3>
+                                <p>Our initial approach used FastAPI's middleware system with a basic logging setup:</p>
+                                
+                                <pre><code class="language-python">
+class AuditLoggingMiddleware(BaseHTTPMiddleware):
+    async def dispatch(self, request: Request, call_next):
+        # Basic logging implementation
+        start_time = time()
+        response = await call_next(request)
+        duration = time() - start_time
+        
+        logging.info(f"Request: {request.method} {request.url.path}")
+        return response
+                                </code></pre>
+
+                                <p>While this worked, it lacked structured logging and proper integration with Azure Application Insights.</p>
+                            </section>
                         </section>
 
-                        <!-- Additional sections following the outline -->
-                    </div>
-                </div>
+                        <section id="azure-insights">
+                            <h2>Integrating with Azure Application Insights</h2>
+                            
+                            <p>The next step was creating a custom handler to properly format our logs for Azure Application Insights:</p>
 
-                <div class="col-lg-3">
-                    <!-- Table of Contents Sidebar -->
-                    <div class="toc-sidebar">
-                        <div class="toc-wrapper">
-                            <h4>Contents</h4>
-                            <nav id="toc">
-                                <ul>
-                                    <li><a href="#introduction">Introduction</a></li>
-                                    <li>
-                                        <a href="#initial-setup">Setting Up Basic Audit Logging</a>
-                                        <ul>
-                                            <li><a href="#requirements">Initial Requirements</a></li>
-                                            <li><a href="#implementation">First Implementation</a></li>
-                                        </ul>
-                                    </li>
-                                    <!-- Additional TOC items -->
-                                </ul>
-                            </nav>
-                        </div>
+                            <pre><code class="language-python">
+class ApplicationInsightsHandler(AzureLogHandler):
+    def __init__(self, connection_string):
+        super().__init__(connection_string=connection_string)
+        
+    def emit(self, record):
+        if hasattr(record, "custom_dimensions"):
+            self.add_telemetry_processor(
+                self._add_custom_dimensions(record.custom_dimensions)
+            )
+        super().emit(record)
+                            </code></pre>
 
-                        <div class="key-metrics">
-                            <h4>Key Improvements</h4>
-                            <div class="metric-card">
-                                <div class="metric">234.77s → 0.1s</div>
-                                <div class="label">Response Time</div>
-                            </div>
-                            <div class="metric-card">
-                                <div class="metric">100%</div>
-                                <div class="label">Audit Coverage</div>
-                            </div>
-                        </div>
+                            <p>This allowed us to send structured data with custom dimensions, making our logs more queryable and valuable for analysis.</p>
+                        </section>
+
+                        <section id="performance-issues">
+                            <h2>Addressing Performance Bottlenecks</h2>
+                            
+                            <p>Our initial implementation had a significant issue: it was blocking the request while gathering all the audit information. With complex token decoding and body parsing, some requests were taking over 200ms just for logging!</p>
+
+                            <p>The solution came in three parts:</p>
+                            <ol>
+                                <li>Parallel processing of the audit information</li>
+                                <li>Asynchronous logging</li>
+                                <li>Careful request body handling</li>
+                            </ol>
+                        </section>
+
+                        <section id="final-solution">
+                            <h2>The Optimized Solution</h2>
+                            
+                            <p>Our final implementation achieved both goals: comprehensive audit logging and minimal impact on response times. Key improvements included:</p>
+
+                            <ul>
+                                <li>Immediate request forwarding to reduce latency</li>
+                                <li>Asynchronous token processing</li>
+                                <li>Efficient body handling</li>
+                                <li>Structured logging with custom dimensions</li>
+                            </ul>
+
+                            <p>The results were impressive: audit logging overhead dropped from 200+ms to less than 1ms per request.</p>
+                        </section>
+
+                        <section id="lessons-learned">
+                            <h2>Key Takeaways</h2>
+                            
+                            <p>This journey taught several valuable lessons:</p>
+                            <ul>
+                                <li>Always measure performance impact of middleware</li>
+                                <li>Use async operations whenever possible</li>
+                                <li>Structure your logs for easy querying</li>
+                                <li>Consider the end-user experience in every decision</li>
+                            </ul>
+                        </section>
                     </div>
                 </div>
             </div>

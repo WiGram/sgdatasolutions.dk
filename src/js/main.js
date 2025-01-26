@@ -150,4 +150,37 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
+
+    // TOC Intersection Observer
+    document.addEventListener('DOMContentLoaded', function() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    if (id) {
+                        // Find all nav links
+                        const links = document.querySelectorAll('.toc .nav-link');
+                        
+                        // Remove all active classes
+                        links.forEach(link => link.classList.remove('active'));
+                        
+                        // Find and activate the corresponding link
+                        const activeLink = document.querySelector(`.toc .nav-link[href="#${id}"]`);
+                        if (activeLink) {
+                            activeLink.classList.add('active');
+                        }
+                    }
+                }
+            });
+        }, {
+            // Adjust these values to control when sections become "active"
+            rootMargin: '-20% 0px -20% 0px',
+            threshold: [0, 0.25, 0.5]
+        });
+
+        // Observe all sections with IDs
+        document.querySelectorAll('section[id]').forEach((section) => {
+            observer.observe(section);
+        });
+    });
 }) 

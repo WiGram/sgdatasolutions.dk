@@ -1517,45 +1517,89 @@ button:focus-visible {
     font-size: 0.9rem;
 }
 
-/* Table of Contents Sidebar */
+/* Table of Contents Styles */
+.toc-mobile {
+    margin-bottom: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.toc-mobile .card {
+    border: none;
+    background: transparent;
+}
+
+.toc-mobile .card-body {
+    padding: 1.5rem;
+}
+
 .toc-sidebar {
     position: sticky;
     top: 100px;
-    padding: 20px;
-}
-
-.toc-wrapper {
     background: white;
     border-radius: 8px;
-    padding: 20px;
+    padding: 1.5rem;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
 }
 
-.toc-wrapper h4 {
-    margin-bottom: 15px;
+.toc h4 {
     color: var(--text-dark);
+    margin-bottom: 1rem;
+    font-weight: 600;
 }
 
-#toc ul {
-    list-style: none;
-    padding-left: 0;
+.toc nav {
+    margin-bottom: 1rem;
 }
 
-#toc ul ul {
-    padding-left: 20px;
-}
-
-#toc a {
+.toc .nav-link {
     color: var(--text-muted);
+    padding: 0.25rem 0;
+    font-size: 0.95rem;
     text-decoration: none;
-    font-size: 0.9rem;
+    transition: all 0.2s ease;
     display: block;
-    padding: 5px 0;
+    background: transparent;
 }
 
-#toc a:hover {
+.toc .nav-link:hover {
     color: var(--primary-color);
+    transform: translateX(5px);
+    background: transparent;
+}
+
+.toc .nav-link.active {
+    color: var(--primary-color) !important; /* Force color override */
+    font-weight: 600;
+    border-left: 2px solid var(--primary-color);
+    padding-left: 0.5rem;
+    margin-left: -0.5rem;
+    background: transparent;
+}
+
+/* Nested items styling */
+.toc .nav .nav {
+    padding-left: 1rem;
+    margin-top: 0.25rem;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.toc .nav .nav .nav-link {
+    font-size: 0.9rem;
+    background: transparent;
+}
+
+/* Mobile adjustments */
+@media (max-width: 991.98px) {
+    .toc-mobile {
+        order: -1; /* Ensures TOC appears before content on mobile */
+        margin: 1rem -0.75rem 2rem -0.75rem; /* Negative margin to align with container */
+    }
+
+    .toc .nav-link:hover {
+        transform: none; /* Disable hover animation on mobile */
+    }
 }
 
 /* Key Metrics Cards */
@@ -1779,4 +1823,30 @@ button:focus-visible {
     .nav-item.has-megamenu:hover .bi-chevron-right {
         transform: rotate(90deg);
     }
+}
+
+/* TOC responsive behavior */
+@media (max-width: 991.98px) {
+    .toc-wrapper {
+        order: -1; /* Moves TOC above content on mobile */
+        margin-bottom: 2rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .toc-wrapper {
+        position: sticky;
+        top: 100px;
+    }
+}
+
+/* TOC scroll padding elements */
+#scroll-padding-top {
+    height: 100px;  /* Adjust based on your navbar height */
+    visibility: hidden;
+}
+
+#scroll-padding-bottom {
+    height: 100vh;  /* Full viewport height */
+    visibility: hidden;
 }
