@@ -809,25 +809,6 @@ small {
     line-height: 1.5;
 }
 
-.project-header {
-    background: linear-gradient(135deg, var(--background-dark), var(--background-light));
-    color: var(--text-light);
-    padding: 4rem 0;
-    margin-bottom: 3rem;
-}
-
-.project-header h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-}
-
-.project-header .lead {
-    font-size: 1.25rem;
-    opacity: 0.9;
-    max-width: 800px;
-}
-
 .project-section {
     color: var(--text-light);
     padding: 2rem;
@@ -912,10 +893,23 @@ small {
     padding-top: 80px; /* Account for fixed navbar */
 }
 
+
 .project-header {
-    background: linear-gradient(45deg, #2c3e50, #3498db);
+    background: linear-gradient(45deg, var(--background-dark), var(--tertiary-color));
     padding: 60px 0 40px;
     margin-bottom: 40px;
+}
+
+.project-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.project-header .lead {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    max-width: 800px;
 }
 
 .project-meta {
@@ -1477,10 +1471,7 @@ small {
 }
 
 .blog-header {
-    background: linear-gradient(45deg, 
-        #00BCD4,    /* Bright teal */
-        #00838F     /* Your secondary color */
-    );
+    background: linear-gradient(45deg, var(--background-dark), var(--quaternary-color));
     color: white;
     padding: 60px 0 40px;
     margin-bottom: 40px;

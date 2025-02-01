@@ -231,15 +231,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Add to your existing main.js
-    document.querySelector('.hero__scroll-link').addEventListener('click', function(e) {
-        e.preventDefault();
-        const heroSection = document.querySelector('#hero');
-        const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
-        window.scrollTo({
-            top: heroBottom,
-            behavior: 'smooth'
+    const heroScrollLink = document.querySelector('.hero__scroll-link');
+    if (heroScrollLink) {  // Only add event listener if element exists
+        heroScrollLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            const heroSection = document.querySelector('#hero');
+            const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+            window.scrollTo({
+                top: heroBottom,
+                behavior: 'smooth'
+            });
         });
-    });
+    }
     
     // Check visibility on scroll
     window.addEventListener('scroll', checkVisibility);
@@ -247,31 +250,33 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial check for elements in view
     checkVisibility();
 
-    // Add this to your existing scroll detection code
+    // Timeline animation code
     const timeline = document.querySelector('.timeline');
     const timelineItems = document.querySelectorAll('.timeline__item');
     
-    const triggerAnimation = (entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                if (entry.target.classList.contains('timeline')) {
-                    timelineItems.forEach((item, index) => {
-                        setTimeout(() => {
-                            item.classList.add('visible');
-                        }, 100 * index);
-                    });
+    if (timeline) {  // Only proceed if timeline exists
+        const triggerAnimation = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    if (entry.target.classList.contains('timeline')) {
+                        timelineItems.forEach((item, index) => {
+                            setTimeout(() => {
+                                item.classList.add('visible');
+                            }, 100 * index);
+                        });
+                    }
                 }
-            }
-        });
-    };
+            });
+        };
 
-    const options = {
-        threshold: 0.2
-    };
+        const options = {
+            threshold: 0.2
+        };
 
-    const observer = new IntersectionObserver(triggerAnimation, options);
-    observer.observe(timeline);
+        const observer = new IntersectionObserver(triggerAnimation, options);
+        observer.observe(timeline);
+    }
 
     // Initialize all modals
     const modals = document.querySelectorAll('.modal');
