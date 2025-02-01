@@ -1558,61 +1558,54 @@ small {
     padding: 1.5rem;
 }
 
-.toc-sidebar {
+.toc-wrapper {
     position: sticky;
-    top: 100px;
-    background-color: var(--background-light);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    top: 100px;  /* Adjust based on your navbar height */
+}
+
+.card--toc {
+    background: linear-gradient(135deg, var(--background-dark), var(--background-light));
+    color: var(--text-light);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     padding: 1.5rem;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
 }
 
-.toc h4 {
-    color: var(--text-dark);
+.card--toc h4 {
+    color: var(--text-light);
+    font-size: 1.25rem;
     margin-bottom: 1rem;
-    font-weight: 600;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.5rem;
 }
 
-.toc nav {
-    margin-bottom: 1rem;
-}
-
-.toc .nav-link {
-    color: var(--text-muted);
-    padding: 0.25rem 0;
+.card--toc .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
     font-size: 0.95rem;
-    text-decoration: none;
-    transition: all 0.2s ease;
-    display: block;
-    background: transparent;
 }
 
-.toc .nav-link:hover {
+.card--toc .nav-link:hover {
     color: var(--text-light);
     transform: translateX(5px);
-    background: transparent;
 }
 
-.toc .nav-link.active {
-    color: var(--text-light) !important;
-    font-weight: 600;
-    border-left: 2px solid var(--primary-color);
-    padding-left: 0.5rem;
-    margin-left: -0.5rem;
-    background: transparent;
+.card--toc .nav-link.active {
+    color: var(--primary-color);
+    font-weight: 500;
 }
 
-/* Nested items styling */
-.toc .nav .nav {
-    padding-left: 1rem;
-    margin-top: 0.25rem;
-    border-left: 1px solid rgba(0, 0, 0, 0.1);
+/* Nested navigation items */
+.card--toc .nav .nav {
+    margin-left: 1rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.toc .nav .nav .nav-link {
+.card--toc .nav .nav .nav-link {
     font-size: 0.9rem;
-    background: transparent;
+    padding: 0.3rem 0 0.3rem 1rem;
 }
 
 /* Mobile adjustments */
