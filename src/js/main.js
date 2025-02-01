@@ -1,5 +1,10 @@
+// Basic test to ensure JavaScript is running
+console.log('JavaScript file loaded');
+
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM loaded');
+    
     // Get all sections
     const sections = document.querySelectorAll('section')
     const navLinks = document.querySelectorAll('.nav-link')
@@ -181,6 +186,136 @@ document.addEventListener('DOMContentLoaded', () => {
         // Observe all sections with IDs
         document.querySelectorAll('section[id]').forEach((section) => {
             observer.observe(section);
+        });
+    });
+
+    // Add smooth parallax effect with different speeds and fade
+    window.addEventListener('scroll', function() {
+        const scrolled = window.scrollY;
+        const backgroundSpeed = 0.3; // Background moves at 30% speed
+        const textSpeed = 0.35;      // Text moves at 35% speed
+        
+        requestAnimationFrame(() => {
+            const heroBackground = document.querySelector('#hero::before');
+            const heroText = document.querySelector('#hero .text-container');
+            const scrollButton = document.querySelector('.scroll-down');
+            
+            if (scrolled < window.innerHeight) {
+                // Calculate fade based on scroll position
+                const fadeStart = window.innerHeight * 0.2;
+                const fadeEnd = window.innerHeight * 0.7;
+                const opacity = Math.max(0, 1 - (scrolled - fadeStart) / (fadeEnd - fadeStart));
+                
+                if (heroBackground) {
+                    heroBackground.style.transform = `translateY(${scrolled * backgroundSpeed}px)`;
+                }
+                if (heroText) {
+                    heroText.style.transform = `translateY(${scrolled * textSpeed}px)`;
+                    heroText.style.opacity = opacity;
+                }
+                
+                // Quick fade for scroll button
+                if (scrollButton) {
+                    scrollButton.style.opacity = Math.max(0, 0.7 - (scrolled / 100)); // Fades out within first 70px of scroll
+                }
+            }
+        });
+    });
+
+    // Add to your existing main.js
+    document.querySelector('.scroll-down').addEventListener('click', function(e) {
+        e.preventDefault();
+        const heroSection = document.querySelector('#hero');
+        const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+        window.scrollTo({
+            top: heroBottom,
+            behavior: 'smooth'
+        });
+    });
+
+    // Debug: Check if we can find fade-in elements
+    const fadeElements = document.querySelectorAll('.fade-in');
+    
+    // Function to check if element is in viewport
+    const checkVisibility = () => {
+        fadeElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+            
+            if (elementTop < window.innerHeight - elementVisible) {
+                element.classList.add('visible');
+            }
+        });
+    };
+    
+    // Check visibility on scroll
+    window.addEventListener('scroll', checkVisibility);
+    
+    // Initial check for elements in view
+    checkVisibility();
+
+    // Add this to your existing scroll detection code
+    const timeline = document.querySelector('.timeline');
+    const timelineItems = document.querySelectorAll('.timeline__item');
+    
+    const triggerAnimation = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                if (entry.target.classList.contains('timeline')) {
+                    timelineItems.forEach((item, index) => {
+                        setTimeout(() => {
+                            item.classList.add('visible');
+                        }, 100 * index);
+                    });
+                }
+            }
+        });
+    };
+
+    const options = {
+        threshold: 0.2
+    };
+
+    const observer = new IntersectionObserver(triggerAnimation, options);
+    observer.observe(timeline);
+
+    // Initialize all modals
+    const modals = document.querySelectorAll('.modal');
+    
+    modals.forEach(modal => {
+        // Create modal instance with options
+        const modalInstance = new bootstrap.Modal(modal, {
+            backdrop: true,      // Allows clicking outside to close
+            keyboard: true,      // Allows ESC key to close
+            focus: true         // Enables focus management
+        });
+
+        // Handle close button clicks
+        const closeButton = modal.querySelector('.btn-close');
+        if (closeButton) {
+            closeButton.addEventListener('click', () => modalInstance.hide());
+        }
+
+        // Handle clicks outside modal
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modalInstance.hide();
+            }
+        });
+
+        // Handle ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('show')) {
+                modalInstance.hide();
+            }
+        });
+
+        // Clean up when modal is hidden
+        modal.addEventListener('hidden.bs.modal', () => {
+            document.body.classList.remove('modal-open');
+            const backdrop = document.querySelector('.modal-backdrop');
+            if (backdrop) backdrop.remove();
         });
     });
 }) 

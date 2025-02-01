@@ -157,6 +157,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="book-me-btn nav-link" href="#contact">Book Me</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -170,221 +173,275 @@
                 <h1>William Sjölin Gram</h1>
                 <h2>Founder of SG Data Solutions</h2>
                 <p>Transforming raw data into actionable intelligence through robust data architecture and analytics solutions</p>
-                <!-- Call to action button -->
-                <a href="#contact" class="cta-button">Let's Work Together</a>
-            </div>
-            
-            <!-- Scroll indicator -->
-            <div class="scroll-indicator">
-                <a href="#about" class="scroll-down">
-                    <i class="bi bi-chevron-down"></i>
-                </a>
             </div>
         </div>
-
-        <!-- Diagram container outside main container -->
-        <!-- <div class="diagram-container">
-            <img src="src/img/data-flow-diagram.svg" alt="Data Flow Diagram" class="hero-diagram">
-        </div> -->
+        
+        <!-- Scroll indicator - moved outside text-container -->
+        <div class="scroll-indicator">
+            <a href="#about" class="scroll-down">
+                <i class="bi bi-chevron-down"></i>
+            </a>
+        </div>
     </section>
     
     <!-- About Section -->
     <section id="about">
         <div class="container">
-            <!-- Brief Introduction -->
-            <div class="section-header">
+            <div class="section-header fade-in">
                 <h2>About Me</h2>
-                <p class="lead">I design scalable data systems and deliver actionable insights to help organizations make smarter decisions.</p>
+                <p class="lead">Bridging the gap between data and business value</p>
             </div>
 
-            <!-- Main Content Grid -->
-            <div class="about-grid">
-                <!-- Personal Story -->
-                <!-- Personal Story -->
-            <div class="about-story">
-                <h3>My Journey</h3>
-                <p>
-                    My journey started with an education in mathematical finance and economics and a job in risk management at the Danish Central Bank. 
-                    Since then, I have gone from data analytics and dashboarding through to building datamarts and now to building data platforms.
-                </p>
-                <p>
-                    I have partnered with organizations across finance, public sector, and consulting - both as an in-house specialist and trusted advisor — to optimize 
-                    data infrastructure and derive meaningful insights. My approach combines technical expertise with business 
-                    acumen to deliver practical, scalable solutions.
-                </p>
+            <!-- Journey - Image left, text right -->
+            <div class="about-row fade-in">
+                <div class="about-visual">
+                    <img src="src/img/portrait.jpg" alt="William Sjölin Gram" class="profile-image">
+                </div>
+                <div class="about-content">
+                    <h3>My Journey</h3>
+                    <p>
+                        My journey started with an education in mathematical finance and economics and a job in risk management 
+                        at the Danish Central Bank. Since then, I have gone from data analytics and dashboarding through to 
+                        building datamarts and now to building data platforms.
+                    </p>
+                    <p>
+                        I have partnered with organizations across finance, public sector, and consulting - both as an 
+                        in-house specialist and trusted advisor — to optimize data infrastructure and derive meaningful 
+                        insights. My approach combines technical expertise with business acumen to deliver practical, 
+                        scalable solutions.
+                    </p>
+                </div>
+            </div>
+    
+            <div class="about-row fade-in">
+                <div class="about-content">
+                    <h3>My Approach</h3>
+                    <p>
+                        My approach starts with people and purpose. Building something remarkable 
+                        means understanding business objectives, team dynamics, and end-user needs. 
+                        I strive to nurture a culture of collaboration, engagement, and empowerment,
+                        always contributing to an environment where every team member can thrive and 
+                        succeed together.
+                    </p>
+                    <p>
+                        Every project begins with understanding the unique challenges and goals at hand. 
+                        Through collaborative development and well-documented processes, I commit to 
+                        delivering a solution designed for smooth integration into your existing team and 
+                        processes.
+                    </p>
+                </div>
+                <div class="about-visual">
+                    <img src="src/img/midjourney.png" alt="Workshop" class="profile-image">
+                </div>
             </div>
 
-
-            <!-- Key Focus Areas -->
-            <div class="about-focus">
-                <h3>What I Do</h3>
-                <ul class="focus-list">
-                    <li>Design and implement robust data pipelines</li>
-                    <li>Build scalable data warehouse solutions</li>
-                    <li>Develop business intelligence dashboards</li>
-                    <li>Optimize data processes and infrastructure</li>
-                    <li>Establish data governance and audit frameworks</li>
-                </ul>
-            </div>
-
-            <!-- Work Philosophy -->
-            <div class="about-philosophy">
-                <h3>My Approach</h3>
-                <p>
-                    My approach starts with people and purpose. Building something remarkable 
-                    means understanding business objectives, team dynamics, and end-user needs. 
-                    I strive to nurture a culture of collaboration, engagement, and empowerment,
-                    always contributing to an environment where every team member can thrive and 
-                    succeed together.
-                </p>
-                <p>
-                    Every project begins with understanding the unique challenges and goals at hand. 
-                    Through collaborative development and well-documented processes, I commit to 
-                    delivering a solution designed for smooth integration into your existing team and 
-                    processes.
-                </p>
-            </div>
-            </div>
-
-            <!-- Call to Action -->
-            <div class="about-cta">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="#contact" class="btn btn-outline">Get in Touch</a>
+    
+            <div class="about-row fade-in">
+                <div class="about-visual">
+                    <img src="src/img/what-i-do-v2.png" alt="Workshop" class="profile-image">
+                </div>
+                <div class="about-content">
+                    <h3>What I Do</h3>
+                    <ul class="focus-list">
+                        <li>Design and implement robust data pipelines</li>
+                        <li>Build flexible and scalable data warehouse solutions</li>
+                        <li>Develop business intelligence dashboards</li>
+                        <li>Optimize data processes and infrastructure</li>
+                        <li>Establish data governance and audit frameworks</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
-
-    <!-- Competencies Section -->
+    
+    <!-- Professional Competencies Section -->
     <section id="competencies">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header fade-in">
                 <h2>Professional Competencies</h2>
-                <p class="lead">Extensive experience in data engineering and modeling across financial services and property management</p>
+                <p class="lead">Technical expertise meets business understanding</p>
+            </div>
+            
+            <!-- Domain Expertise Section -->
+            <div class="domain-expertise fade-in">
+                <h3>Domain Expertise</h3>
+                <div class="expertise-cards">
+                    <div class="card card--expertise">
+                        <i class="bi bi-graph-up-arrow card__icon"></i>
+                        <h4 class="card__title">Financial Markets</h4>
+                        <p class="card__content">
+                            Extensive experience in regulatory reporting, risk management, and financial data modeling. 
+                            Deep understanding of banking operations and compliance requirements.
+                        </p>
+                    </div>
+                    
+                    <div class="card card--expertise">
+                        <i class="bi bi-bank card__icon"></i>
+                        <h4 class="card__title">Banking & Finance</h4>
+                        <p class="card__content">
+                            Deep understanding of financial institutions, regulatory requirements, and external reporting. 
+                            Experience with personal and commercial banking, and financial reporting.
+                        </p>
+                    </div>
+
+                    <div class="card card--expertise">
+                        <i class="bi bi-buildings card__icon"></i>
+                        <h4 class="card__title">Property Portfolio Management</h4>
+                        <p class="card__content">
+                            Expertise in real estate data management, portfolio analysis, and property performance metrics. 
+                            Focus on data-driven property management and valuation.
+                        </p>
+                    </div>
+
+                    <div class="card card--expertise">
+                        <i class="bi bi-bar-chart card__icon"></i>
+                        <h4 class="card__title">Business Intelligence</h4>
+                        <p class="card__content">
+                            Expertise in transforming raw data into actionable insights. 
+                            Strong background in dashboard development and KPI monitoring.
+                        </p>
+                    </div>
+
+                    <div class="card card--expertise">
+                        <i class="bi bi-gear-wide-connected card__icon"></i>
+                        <h4 class="card__title">Data Engineering</h4>
+                        <p class="card__content">
+                            Proficient in designing and implementing data pipelines, ETL processes, 
+                            and data warehouse solutions. Focus on scalability and maintainability.
+                        </p>
+                    </div>
+                </div>
             </div>
 
-            <div class="competencies-grid">
-                <!-- Domain Expertise -->
-                <div class="competency-card featured">
-                    <div class="card-header">
-                        <i class="fas fa-chart-line"></i>
-                        <h3>Domain Expertise</h3>
+            <!-- Technical Skills Section -->
+            <div class="technical-skills fade-in">
+                <h3>Technical Expertise</h3>
+                <div class="skills-grid">
+                    <!-- Cloud & Infrastructure -->
+                    <div class="card competency-card">
+                        <div class="card-header">
+                            <i class="fas fa-cloud"></i>
+                            <h4>Cloud & Infrastructure</h4>
+                        </div>
+                        <ul class="skill-list">
+                            <li class="skill-item expert">
+                                <div class="skill-name-group">
+                                    <span class="skill-name">Azure Data Factory</span>
+                                </div>
+                                <div class="skill-level" data-level="expert"></div>
+                            </li>
+                            <li class="skill-item expert">
+                                <div class="skill-name-group">
+                                    <span class="skill-name">Azure Functions</span>
+                                </div>
+                                <div class="skill-level" data-level="intermediate"></div>
+                            </li>
+                            <li class="skill-item expert">
+                                <div class="skill-name-group">
+                                    <span class="skill-name">Azure Data Lake</span>
+                                </div>
+                                <div class="skill-level" data-level="advanced"></div>
+                            </li>
+                            <li class="skill-item expert">
+                                <div class="skill-name-group">
+                                    <span class="skill-name">Azure SQL Database</span>
+                                </div>
+                                <div class="skill-level" data-level="expert"></div>
+                            </li>
+                        </ul>
                     </div>
-                    <ul class="skill-list">
-                        <li class="expertise-item">
-                            <h4>Financial Markets</h4>
-                            <p>Risk management modeling and analytics for trading floor operations</p>
-                        </li>
-                        <li class="expertise-item">
-                            <h4>Banking & Finance</h4>
-                            <p>Personal and corporate banking data modeling in enterprise data centers</p>
-                        </li>
-                        <li class="expertise-item">
-                            <h4>Property Portfolio Management</h4>
-                            <p>Large-scale property portfolio data analysis and modeling</p>
-                        </li>
-                    </ul>
+
+                    <!-- Data Engineering -->
+                    <div class="card competency-card">
+                        <div class="card-header">
+                            <i class="fas fa-database"></i>
+                            <h4>Data Engineering</h4>
+                        </div>
+                        <ul class="skill-list">
+                            <li class="skill-item expert">
+                                <div class="skill-name-group">
+                                    <span class="skill-name">MS SQL Server</span>
+                                </div>
+                                <div class="skill-level" data-level="expert"></div>
+                            </li>
+                            <li class="skill-item expert">
+                                <div class="skill-name-group">
+                                    <span class="skill-name">Teradata SQL</span>
+                                </div>
+                                <div class="skill-level" data-level="expert"></div>
+                            </li>
+                            <li class="skill-item intermediate">
+                                <div class="skill-name-group">
+                                    <span class="skill-name">PostgreSQL</span>
+                                </div>
+                                <div class="skill-level" data-level="intermediate"></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Analytics & BI -->
+                    <div class="card competency-card">
+                        <div class="card-header">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Programming and Analytics</h4>
+                        </div>
+                        <ul class="skill-list">
+                            <li class="skill-item expert">
+                                <div class="skill-name-group">
+                                    <span class="skill-name">Python Analytics Stack</span>
+                                    <small>pandas, numpy</small>
+                                </div>
+                                <div class="skill-level" data-level="advanced"></div>
+                            </li>
+                            <li class="skill-item intermediate">
+                                <div class="skill-name-group">
+                                    <span class="skill-name">FastAPI Development</span>
+                                    <small>REST APIs, async operations</small>
+                                </div>
+                                <div class="skill-level" data-level="intermediate"></div>
+                            </li>
+                            <li class="skill-item advanced">
+                                <div class="skill-name-group">
+                                    <span class="skill-name">R & Shiny</span>
+                                    <small>Statistical analysis, dashboarding</small>
+                                </div>
+                                <div class="skill-level" data-level="advanced"></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Development -->
+                    <div class="card competency-card">
+                        <div class="card-header">
+                            <i class="fas fa-code"></i>
+                            <h4>Business Analytics and Reporting</h4>
+                        </div>
+                        <ul class="skill-list">
+                            <li class="skill-item expert">
+                                <div class="skill-name-group">
+                                    <span class="skill-name">Advanced Excel Analytics</span>
+                                    <small>Financial modeling, Performance analytics</small>
+                                </div>
+                                <div class="skill-level" data-level="expert"></div>
+                            </li>
+                            <li class="skill-item expert">
+                                <div class="skill-name-group">
+                                    <span class="skill-name">Business Intelligence</span>
+                                    <small>Reporting solutions</small>
+                                </div>
+                                <div class="skill-level" data-level="advanced"></div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
-                <!-- Technical Stack -->
-                <div class="competency-card">
-                    <div class="card-header">
-                        <i class="fas fa-cloud"></i>
-                        <h3>Cloud & Infrastructure</h3>
-                    </div>
-                    <ul class="skill-list">
-                        <li class="skill-item expert">
-                            <span class="skill-name">Azure Data Factory</span>
-                            <div class="skill-level" data-level="expert"></div>
-                        </li>
-                        <li class="skill-item expert">
-                            <span class="skill-name">Azure Functions</span>
-                            <div class="skill-level" data-level="expert"></div>
-                        </li>
-                        <li class="skill-item expert">
-                            <span class="skill-name">Azure Data Lake</span>
-                            <div class="skill-level" data-level="expert"></div>
-                        </li>
-                        <li class="skill-item expert">
-                            <span class="skill-name">Azure SQL Database</span>
-                            <div class="skill-level" data-level="expert"></div>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Database & SQL -->
-                <div class="competency-card">
-                    <div class="card-header">
-                        <i class="fas fa-database"></i>
-                        <h3>Database Systems</h3>
-                    </div>
-                    <ul class="skill-list">
-                        <li class="skill-item expert">
-                            <span class="skill-name">MS SQL Server</span>
-                            <div class="skill-level" data-level="expert"></div>
-                        </li>
-                        <li class="skill-item expert">
-                            <span class="skill-name">Teradata SQL</span>
-                            <div class="skill-level" data-level="expert"></div>
-                        </li>
-                        <li class="skill-item intermediate">
-                            <span class="skill-name">PostgreSQL</span>
-                            <div class="skill-level" data-level="intermediate"></div>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Programming & Frameworks -->
-                <div class="competency-card">
-                    <div class="card-header">
-                        <i class="fas fa-code"></i>
-                        <h3>Programming & Analytics</h3>
-                    </div>
-                    <ul class="skill-list">
-                        <li class="skill-item expert">
-                            <span class="skill-name">Python Analytics Stack</span>
-                            <small>pandas, numpy, scikit-learn</small>
-                            <div class="skill-level" data-level="expert"></div>
-                        </li>
-                        <li class="skill-item intermediate">
-                            <span class="skill-name">FastAPI Development</span>
-                            <small>REST APIs, async operations</small>
-                            <div class="skill-level" data-level="intermediate"></div>
-                        </li>
-                        <li class="skill-item advanced">
-                            <span class="skill-name">R & Shiny</span>
-                            <small>Statistical analysis, dashboarding</small>
-                            <div class="skill-level" data-level="advanced"></div>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Business Analytics -->
-                <div class="competency-card">
-                    <div class="card-header">
-                        <i class="fas fa-table"></i>
-                        <h3>Business Analytics</h3>
-                    </div>
-                    <ul class="skill-list">
-                        <li class="skill-item expert">
-                            <span class="skill-name">Advanced Excel Analytics</span>
-                            <small>Financial modeling, scenario analysis, dashboards</small>
-                            <div class="skill-level" data-level="expert"></div>
-                        </li>
-                        <li class="skill-item expert">
-                            <span class="skill-name">Business Intelligence</span>
-                            <small>Performance analytics, reporting solutions</small>
-                            <div class="skill-level" data-level="expert"></div>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Methodologies -->
-                <div class="competency-card">
+                <!-- Methodologies (full width) -->
+                <div class="card competency-card methodology-card">
                     <div class="card-header">
                         <i class="fas fa-tasks"></i>
-                        <h3>Methodologies</h3>
+                        <h4>Methodologies & Practices</h4>
                     </div>
-                    <ul class="skill-list methodology-list">
+                    <ul class="skill-list">
                         <li>
                             <span class="methodology-item">Agile Scrum</span>
                             <p>Experience with PI planning, sprint management, and daily standups</p>
@@ -400,21 +457,22 @@
     </section>
 
     <!-- CV Section -->
-    <section id="cv" class="section">
+    <section class="cv" id="cv">
         <div class="container">
             <div class="row">
                 <!-- Main timeline content -->
                 <div class="col-lg-8">
-                    <h2 class="section-title">Experience</h2>
+                    <h2 class="cv__title">Experience</h2>
+                    
                     <div class="timeline">
                         <!-- Current Role -->
-                        <div class="timeline-item">
-                            <div class="timeline-marker current"></div>
-                            <div class="timeline-content">
-                                <div class="timeline-date">November 2024 - Present</div>
-                                <h4>Founder & Data Solutions Consultant</h4>
-                                <h5>SG Data Solutions</h5>
-                                <ul class="experience-details">
+                        <div class="timeline__item">
+                            <div class="timeline__marker timeline__marker--current"></div>
+                            <div class="timeline__content">
+                                <span class="timeline__date">November 2024 - Present</span>
+                                <h4 class="timeline__role">Founder & Data Solutions Consultant</h4>
+                                <h5 class="timeline__company">SG Data Solutions</h5>
+                                <ul class="timeline__details">
                                     <li>Independent data engineering and analytics consultancy</li>
                                     <li>Delivering end-to-end data solutions for clients</li>
                                     <li>Specializing in cloud infrastructure and business intelligence</li>
@@ -422,55 +480,55 @@
                             </div>
                         </div>
 
-                    <!-- Previous Implement Role -->
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">March 2023 - October 2024</div>
-                            <h4>Senior Management Consultant</h4>
-                            <h5>Implement Consulting Group</h5>
-                            <ul class="experience-details">
-                                <li>Led cross-industry data platform implementation projects</li>
-                                <li>Designed performance pay systems and quality management frameworks</li>
-                                <li>Delivered solutions across Financial Services, Construction and Public sectors</li>
-                            </ul>
+                        <!-- Previous Role -->
+                        <div class="timeline__item">
+                            <div class="timeline__marker"></div>
+                            <div class="timeline__content">
+                                <span class="timeline__date">March 2023 - October 2024</span>
+                                <h4 class="timeline__role">Senior Management Consultant</h4>
+                                <h5 class="timeline__company">Implement Consulting Group</h5>
+                                <ul class="timeline__details">
+                                    <li>Led cross-industry data platform implementation projects</li>
+                                    <li>Designed performance pay systems and quality management frameworks</li>
+                                    <li>Delivered solutions across Financial Services, Construction and Public sectors</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">August 2021 - February 2023</div>
-                            <h4>Management Consultant</h4>
-                            <h5>PwC</h5>
-                            <ul class="experience-details">
-                                <li>Spearheaded tax reporting engine transformation project</li>
-                                <li>Led migration from mainframe to modern EDW solution</li>
-                            </ul>
+                        <div class="timeline__item">
+                            <div class="timeline__marker"></div>
+                            <div class="timeline__content">
+                                <span class="timeline__date">August 2021 - February 2023</span>
+                                <h4 class="timeline__role">Management Consultant</h4>
+                                <h5 class="timeline__company">PwC</h5>
+                                <ul class="timeline__details">
+                                    <li>Spearheaded tax reporting engine transformation project</li>
+                                    <li>Led migration from mainframe to modern EDW solution</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">December 2017 - July 2021</div>
-                            <h4>Risk Manager</h4>
-                            <h5>The Danish Central Bank</h5>
-                            <ul class="experience-details">
-                                <li>Managed currency reserve risk assessment</li>
-                                <li>Developed and maintained risk assessment tools</li>
-                                <li>Designed daily credit ratings reporting system</li>
-                            </ul>
+                        <div class="timeline__item">
+                            <div class="timeline__marker"></div>
+                            <div class="timeline__content">
+                                <span class="timeline__date">December 2017 - July 2021</span>
+                                <h4 class="timeline__role">Risk Manager</h4>
+                                <h5 class="timeline__company">The Danish Central Bank</h5>
+                                <ul class="timeline__details">
+                                    <li>Managed currency reserve risk assessment</li>
+                                    <li>Developed and maintained risk assessment tools</li>
+                                    <li>Designed daily credit ratings reporting system</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
 
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <div class="timeline-date">August 2015 - November 2017</div>
-                                <h4>Assistant Analyst</h4>
-                                <h5>The Danish Ministry of Business and Financial Affairs</h5>
-                                <ul class="experience-details">
+                        <div class="timeline__item">
+                            <div class="timeline__marker"></div>
+                            <div class="timeline__content">
+                                <span class="timeline__date">August 2015 - November 2017</span>
+                                <h4 class="timeline__role">Assistant Analyst</h4>
+                                <h5 class="timeline__company">The Danish Ministry of Business and Financial Affairs</h5>
+                                <ul class="timeline__details">
                                     <li>Conducted financial services industry analysis</li>
                                     <li>Contributed to regulatory impact assessments</li>
                                     <li>Developed entrepreneurship support initiatives</li>
@@ -484,7 +542,7 @@
                 <div class="col-lg-4">
                     <div class="cv-sidebar">
                         <!-- Board Position Card -->
-                        <div class="sidebar-card board-position">
+                        <div class="card sidebar-card board-position">
                             <h3>Board Position</h3>
                             <div class="board-item">
                                 <div class="position-meta">
@@ -507,7 +565,7 @@
                         </div>
 
                         <!-- Education Card -->
-                        <div class="sidebar-card education">
+                        <div class="card sidebar-card education">
                             <h3>Education</h3>
                             <div class="education-item">
                                 <div class="position-meta">
@@ -536,78 +594,79 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="bg-light">
+    <section class="projects" id="projects">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header fade-in">
                 <h2>Projects</h2>
                 <p class="lead">My portfolio of projects</p>
             </div>
             
-            <div class="row g-4">
+            <div class="projects__grid">
                 <!-- Project Card -->
-                <div class="col-md-6 col-lg-4">
-                    <div 
-                        class="card project-card h-100" 
-                        data-bs-toggle="modal" 
-                        data-bs-target="#project1Modal"
-                    >
-                        <div class="card-body">
-                            <!-- Add click indicator -->
-                            <div class="click-indicator">
-                                <i class="bi bi-box-arrow-up-right"></i>
+                <div class="card project-card" data-bs-toggle="modal" data-bs-target="#project1Modal">
+                    <div class="project-card__body">
+                        <div class="project-card__indicator">
+                            <i class="bi bi-box-arrow-up-right"></i>
+                        </div>
+                        
+                        <div class="project-card__tags">
+                            <span class="tag tag--primary">Financial Services</span>
+                            <span class="tag tag--secondary">Data Migration</span>
+                        </div>
+
+                        <h3 class="project-card__title">Regulatory Reporting Solution</h3>
+                        <h4 class="project-card__subtitle">Nordic Financial Services Data Center</h4>
+                        
+                        <p class="project-card__description">
+                            Implemented the migration of mission-critical regulatory reporting from mainframe 
+                            to modern EDW solution, affecting millions of customer records across multiple 
+                            Nordic financial institutions.
+                        </p>
+
+                        <div class="project-card__metrics">
+                            <div class="metric">
+                                <span class="metric__number">19</span>
+                                <span class="metric__label">Month Project</span>
                             </div>
-                            
-                            <div class="project-tags mb-2">
-                                <span class="badge bg-primary">Financial Services</span>
-                                <span class="badge bg-secondary">Data Migration</span>
-                            </div>
-                            <h5 class="card-title">Regulatory Reporting Solution</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Nordic Financial Services Data Center</h6>
-                            <p class="card-text">Implemented the migration of mission-critical regulatory reporting from mainframe to modern EDW solution, affecting millions of customer records across multiple Nordic financial institutions.</p>
-                            <div class="project-metrics">
-                                <div class="metric">
-                                    <span class="number">19</span>
-                                    <span class="label">Month Project</span>
-                                </div>
-                                <div class="metric">
-                                    <span class="number">20+</span>
-                                    <span class="label">Reports</span>
-                                </div>
+                            <div class="metric">
+                                <span class="metric__number">20+</span>
+                                <span class="metric__label">Reports</span>
                             </div>
                         </div>
                     </div>
+
                 </div>
 
-                <!-- Add this card in the Projects Section after the Regulatory Reporting card -->
-                <div class="col-md-6 col-lg-4">
-                    <div 
-                        class="card project-card h-100" 
-                        data-bs-toggle="modal" 
-                        data-bs-target="#performancePayModal"
-                    >
-                        <div class="card-body">
-                            <!-- Add click indicator -->
-                            <div class="click-indicator">
-                                <i class="bi bi-box-arrow-up-right"></i>
+                <!-- Performance Pay Card -->
+                <div class="card project-card" data-bs-toggle="modal" data-bs-target="#performancePayModal">
+                    <div class="project-card__body">
+                        <div class="project-card__indicator">
+                            <i class="bi bi-box-arrow-up-right"></i>
+                        </div>
+                        
+                        <div class="project-card__tags">
+                            <span class="tag tag--primary">HR Analytics</span>
+                            <span class="tag tag--secondary">Financial Modelling</span>
+                            <span class="tag tag--info">Compensation</span>
+                        </div>
+
+                        <h3 class="project-card__title">Performance Pay Transformation</h3>
+                        <h4 class="project-card__subtitle">Global Engineering Consultancy</h4>
+                        
+                        <p class="project-card__description">
+                            Led comprehensive analysis of performance pay models through multiple transformation 
+                            phases, combining financial modeling with industry benchmarking to optimize 
+                            compensation structures across global locations.
+                        </p>
+
+                        <div class="project-card__metrics">
+                            <div class="metric">
+                                <span class="metric__number">2</span>
+                                <span class="metric__label">Project Phases</span>
                             </div>
-                            
-                            <div class="project-tags mb-2">
-                                <span class="badge bg-primary">HR Analytics</span>
-                                <span class="badge bg-secondary">Financial Modelling</span>
-                                <span class="badge bg-info">Compensation</span>
-                            </div>
-                            <h5 class="card-title">Performance Pay Transformation</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Global Engineering Consultancy</h6>
-                            <p class="card-text">Led comprehensive analysis of performance pay models through multiple transformation phases, combining financial modeling with industry benchmarking to optimize compensation structures across global locations.</p>
-                            <div class="project-metrics">
-                                <div class="metric">
-                                    <span class="number">2</span>
-                                    <span class="label">Project Phases</span>
-                                </div>
-                                <div class="metric">
-                                    <span class="number">Global</span>
-                                    <span class="label">Scale</span>
-                                </div>
+                            <div class="metric">
+                                <span class="metric__number">Global</span>
+                                <span class="metric__label">Scale</span>
                             </div>
                         </div>
                     </div>
@@ -617,41 +676,41 @@
     </section>
 
     <!-- Blog Section -->
-    <section id="blog" class="py-5">
+    <section class="blog" id="blog">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header fade-in">
                 <h2>Blog</h2>
                 <p class="lead">My blog posts on data, technology and business</p>
             </div>
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <a href="/blog_posts/api-audit-logging/" class="blog-card-link">
-                        <div class="card blog-card h-100">
-                            <div class="card-body">
-                                <div class="click-indicator">
-                                    <i class="bi bi-box-arrow-up-right"></i>
-                                </div>
-                                
-                                <div class="blog-tags mb-2">
-                                    <span class="badge bg-primary">API Development</span>
-                                    <span class="badge bg-secondary">FastAPI</span>
-                                </div>
-                                <h5 class="card-title">FastAPI Audit Logging</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Performant audit logging for Application Insights</h6>
-                                <p class="card-text">A journey from logging setup through Azure handlers to audit logging middleware.</p>
-                                <div class="blog-footer">
-                                    <span class="date">January 2025</span>
-                                </div>
+            <div class="blog__grid">
+                <a href="/blog_posts/api-audit-logging/">
+                    <div class="card blog-card">
+                        <div class="blog-card__body">
+                            <div class="blog-card__indicator">
+                                <i class="bi bi-box-arrow-up-right"></i>
                             </div>
+                            <div class="blog-card__tags">
+                                <span class="tag tag--primary">API Development</span>
+                                <span class="tag tag--secondary">FastAPI</span>
+                            </div>
+                            <h3 class="blog-card__title">FastAPI Audit Logging</h3>
+                            <h4 class="blog-card__subtitle">Performant audit logging for Application Insights</h4>
+                            <p class="blog-card__description">
+                                A journey from logging setup through Azure handlers to audit logging middleware.
+                            </p>
+                            <div class="blog-card__footer">
+                                <span class="date">January 2025</span>
+                            </div>
+
                         </div>
-                    </a>
-                </div>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
     
     <!-- Testimonials Section -->
-    <section id="testimonials" class="py-5 bg-light">
+    <section id="testimonials" class="section">
         <div class="container">
             <h2>Testimonials</h2>
             <!-- Testimonials carousel placeholder -->
@@ -659,68 +718,71 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section">
+    <section class="contact" id="contact">
         <div class="container">
-            <h2 class="section-title">Contact</h2>
-            <div class="row contact-container">
+            <div class="section-header fade-in">
+                <h2>Contact</h2>
+                <p class="lead">Get in touch</p>
+            </div>
+            
+            <div class="contact__grid">
                 <!-- Contact Information -->
-                <div class="col-lg-6">
-                    <div class="contact-info-card">
-                        <div class="contact-header">
+                <div class="contact__info">
+                    <div class="contact__card">
+                        <div class="contact__header">
                             <h3>Let's Connect</h3>
                             <p class="lead">Available for consulting and collaboration opportunities</p>
                         </div>
                         
-                        <div class="contact-details">
-                            <div class="contact-item">
-                                <i class="bi bi-calendar-check"></i>
-                                <div class="contact-text">
-                                    <h4>Schedule a Meeting</h4>
-                                    <a href="https://outlook.office.com/bookwithme/user/87239542b98d456d90de7c79ec583805@sgdatasolutions.dk?anonymous&ep=plink" 
+                        <div class="contact__items">
+                            <div class="contact__item">
+                                <i class="bi bi-calendar-check card__icon"></i>
+                                <div class="contact__content">
+                                    <h4 class="contact__label">Schedule a Meeting</h4>
+                                    <a href="https://outlook.office.com/bookwithme/user/87239542b98d456d90de7c79ec583805@sgdatasolutions.dk" 
+                                       class="contact__link"
                                        target="_blank" 
-                                       rel="noopener">
-                                        Book a consultation
-                                    </a>
+                                       rel="noopener">Book a consultation</a>
                                 </div>
                             </div>
                             
-                            <div class="contact-item">
-                                <i class="bi bi-geo-alt"></i>
-                                <div class="contact-text">
-                                    <h4>Location</h4>
-                                    <p>Copenhagen, Denmark</p>
+                            <div class="contact__item">
+                                <i class="bi bi-geo-alt card__icon"></i>
+                                <div class="contact__content">
+                                    <h4 class="contact__label">Location</h4>
+                                    <p class="contact__text">Copenhagen, Denmark</p>
                                 </div>
                             </div>
                             
-                            <div class="contact-item">
-                                <i class="bi bi-envelope"></i>
-                                <div class="contact-text">
-                                    <h4>Email</h4>
-                                    <a href="mailto:wsg@sgdatasolutions.dk">wsg@sgdatasolutions.dk</a>
+                            <div class="contact__item">
+                                <i class="bi bi-envelope card__icon"></i>
+                                <div class="contact__content">
+                                    <h4 class="contact__label">Email</h4>
+                                    <a href="mailto:wsg@sgdatasolutions.dk" class="contact__link">wsg@sgdatasolutions.dk</a>
                                 </div>
                             </div>
                             
-                            <div class="contact-item">
-                                <i class="bi bi-linkedin"></i>
-                                <div class="contact-text">
-                                    <h4>LinkedIn</h4>
-                                    <a href="https://linkedin.com/in/william-gram" target="_blank" rel="noopener">Connect on LinkedIn</a>
+                            <div class="contact__item">
+                                <i class="bi bi-linkedin card__icon"></i>
+                                <div class="contact__content">
+                                    <h4 class="contact__label">LinkedIn</h4>
+                                    <a href="https://linkedin.com/in/william-gram" target="_blank" rel="noopener" class="contact__link">Connect on LinkedIn</a>
                                 </div>
                             </div>
                             
-                            <div class="contact-item">
-                                <i class="bi bi-github"></i>
-                                <div class="contact-text">
-                                    <h4>GitHub</h4>
-                                    <a href="https://github.com/WiGram" target="_blank" rel="noopener">View Projects</a>
+                            <div class="contact__item">
+                                <i class="bi bi-github card__icon"></i>
+                                <div class="contact__content">
+                                    <h4 class="contact__label">GitHub</h4>
+                                    <a href="https://github.com/WiGram" target="_blank" rel="noopener" class="contact__link">View Projects</a>
                                 </div>
                             </div>
 
-                            <div class="contact-item">
-                                <i class="bi bi-building"></i>
-                                <div class="contact-text">
-                                    <h4>Business Details</h4>
-                                    <p>CVR: 45100901</p>
+                            <div class="contact__item">
+                                <i class="bi bi-building card__icon"></i>
+                                <div class="contact__content">
+                                    <h4 class="contact__label">Business Details</h4>
+                                    <p class="contact__text">CVR: 45100901</p>
                                 </div>
                             </div>
                         </div>
@@ -728,18 +790,14 @@
                 </div>
                 
                 <!-- Map -->
-                <div class="col-lg-6">
-                    <div class="map-container">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d144003.79544257846!2d12.4478784!3d55.6760968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4652533c5c803d23%3A0x4dd7edde69467b8!2sCopenhagen%2C%20Denmark!5e0!3m2!1sen!2s!4v1710835000000!5m2!1sen!2s" 
-                            width="100%" 
-                            height="450" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                    </div>
+                <div class="contact__map">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d144003.79544257846!2d12.4478784!3d55.6760968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4652533c5c803d23%3A0x4dd7edde69467b8!2sCopenhagen%2C%20Denmark!5e0!3m2!1sen!2s!4v1710835000000!5m2!1sen!2s" 
+                        class="contact__iframe"
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                 </div>
             </div>
         </div>
@@ -767,55 +825,70 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Enterprise Data Warehouse Regulatory Reporting Solution</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="project-tags mb-3">
-                        <span class="badge bg-primary">Financial Services</span>
-                        <span class="badge bg-secondary">Data Migration</span>
-                        <span class="badge bg-info">Regulatory Compliance</span>
+                        <span class="tag tag--primary">Financial Services</span>
+                        <span class="tag tag--secondary">Data Migration</span>
+                        <span class="tag tag--info">Regulatory Compliance</span>
                     </div>
                     
-                    <h6>Client</h6>
-                    <p>Major Nordic Financial Services Data Center supporting multiple financial institutions</p>
+                    <div class="modal-section">
+                        <h6 class="modal-section-title">Client</h6>
+                        <p>Major Nordic Financial Services Data Center supporting multiple financial institutions</p>
+                    </div>
                     
-                    <h6>Challenge</h6>
-                    <p>Migration of legacy mainframe-based regulatory reporting system to a modern Enterprise Data Warehouse solution while maintaining strict regulatory compliance and data accuracy for millions of customer records.</p>
+                    <div class="modal-section">
+                        <h6 class="modal-section-title">Challenge</h6>
+                        <p>Migration of legacy mainframe-based regulatory reporting system to a modern Enterprise Data Warehouse solution while maintaining strict regulatory compliance and data accuracy for millions of customer records.</p>
+                    </div>
                     
-                    <h6>Key Achievements</h6>
-                    <ul>
-                        <li>Successfully delivered two major production releases within 19 months</li>
-                        <li>Designed and implemented comprehensive data mart solution</li>
-                        <li>Managed transformation of 100+ source tables into standardized reporting format</li>
-                        <li>Created automated workflows for various reporting frequencies</li>
-                    </ul>
+                    <div class="modal-section">
+                        <h6 class="modal-section-title">Key Achievements</h6>
+                        <ul class="modal-list">
+                            <li>Successfully delivered two major production releases within 19 months</li>
+                            <li>Designed and implemented comprehensive data mart solution</li>
+                            <li>Managed transformation of 100+ source tables into standardized reporting format</li>
+                            <li>Created automated workflows for various reporting frequencies</li>
+                        </ul>
+                    </div>
                     
-                    <h6>Technical Highlights</h6>
-                    <ul>
-                        <li>Built specialized data mart on EDW using Teradata SQL</li>
-                        <li>Implemented dimensional modeling for centralized reporting</li>
-                        <li>Created automated reconciliation processes</li>
-                        <li>Developed user-friendly mapping interface for reporting specialists</li>
-                    </ul>
+                    <div class="modal-section">
+                        <h6 class="modal-section-title">Technical Highlights</h6>
+                        <ul class="modal-list">
+                            <li>Built specialized data mart on EDW using Teradata SQL</li>
+                            <li>Implemented dimensional modeling for centralized reporting</li>
+                            <li>Created automated reconciliation processes</li>
+                            <li>Developed user-friendly mapping interface for reporting specialists</li>
+                        </ul>
+                    </div>
                     
-                    <h6>Impact</h6>
-                    <p>Delivered a modern, maintainable reporting solution that achieved full compliance with regulatory frameworks while significantly improving reporting efficiency and data accessibility.</p>
+                    <div class="modal-section">
+                        <h6 class="modal-section-title">Impact</h6>
+                        <p>Delivered a modern, maintainable reporting solution that achieved full compliance with regulatory frameworks while significantly improving reporting efficiency and data accessibility.</p>
+                    </div>
                     
-                    <div class="project-metrics mt-4">
+                    <div class="modal-metrics">
                         <div class="metric">
-                            <span class="number">20-30</span>
-                            <span class="label">Regulatory Reports</span>
+                            <span class="metric__number">20-30</span>
+                            <span class="metric__label">Regulatory Reports</span>
                         </div>
                         <div class="metric">
-                            <span class="number">100+</span>
-                            <span class="label">Source Tables</span>
+                            <span class="metric__number">50+</span>
+                            <span class="metric__label">Source Tables</span>
                         </div>
                         <div class="metric">
-                            <span class="number">19</span>
-                            <span class="label">Month Duration</span>
+                            <span class="metric__number">30+</span>
+                            <span class="metric__label">Data Mart report tables</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric__number">19</span>
+                            <span class="metric__label">Month Duration</span>
                         </div>
                     </div>
                 </div>
+
                 <div class="modal-footer">
                     <a href="/projects/regulatory-reporting/" class="btn btn-primary">View Full Case Study</a>
                 </div>
@@ -862,21 +935,23 @@
                     <h6>Impact</h6>
                     <p>Delivered actionable insights enabling informed decision-making on compensation structures, resulting in improved talent attraction and retention while maintaining financial sustainability.</p>
                     
-                    <div class="project-metrics mt-4">
+                    <div class="modal-metrics">
                         <div class="metric">
-                            <span class="number">2</span>
-                            <span class="label">Project Phases</span>
+                            <span class="metric__number">2</span>
+                            <span class="metric__label">Project Phases</span>
+
                         </div>
                         <div class="metric">
-                            <span class="number">Global</span>
-                            <span class="label">Coverage</span>
+                            <span class="metric__number">Global</span>
+                            <span class="metric__label">Coverage</span>
                         </div>
                         <div class="metric">
-                            <span class="number">Multiple</span>
-                            <span class="label">Locations</span>
+                            <span class="metric__number">Multiple</span>
+                            <span class="metric__label">Locations</span>
                         </div>
                     </div>
                 </div>
+
                 <div class="modal-footer">
                     <a href="/projects/performance-pay/" class="btn btn-primary">View Full Case Study</a>
                 </div>

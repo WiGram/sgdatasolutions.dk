@@ -215,38 +215,40 @@
             <div class="row">
                 <!-- TOC -->
                 <div class="col-lg-3 toc-wrapper">
-                    <div class="toc-sidebar">
-                        <h4>Contents</h4>
-                        <nav class="toc" aria-labelledby="toc-title">
-                            <ul class="nav flex-column">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#introduction">Introduction</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#initial-setup">Setting Up Basic Audit Logging</a>
-                                    <ul class="nav flex-column ms-3">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#requirements">Initial Requirements</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#implementation">First Implementation</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#azure-insights">Integrating with Azure Application Insights</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#performance-issues">Addressing Performance Bottlenecks</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#final-solution">The Optimized Solution</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#lessons-learned">Key Takeaways</a>
-                                </li>
-                            </ul>
-                        </nav>
+                    <div class="toc-mobile">
+                        <div class="card card--toc">
+                            <nav class="nav flex-column">
+                                <h4>Contents</h4>
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#introduction">Introduction</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#initial-setup">Setting Up Basic Audit Logging</a>
+                                        <ul class="nav flex-column ms-3">
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#requirements">Initial Requirements</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#implementation">First Implementation</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#azure-insights">Integrating with Azure Application Insights</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#performance-issues">Addressing Performance Bottlenecks</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#final-solution">The Optimized Solution</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#lessons-learned">Key Takeaways</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
                 </div>
 
@@ -263,9 +265,9 @@
                         <section id="initial-setup">
                             <h2>Setting Up Basic Audit Logging</h2>
                             
-                            <section id="requirements">
-                                <h3>Initial Requirements</h3>
-                                <p>The audit logging system needed to capture:</p>
+                            <div class="card card--section">
+                                <h3 class="card__title">Initial Requirements</h3>
+                                <p class="card__content">The audit logging system needed to capture:</p>
                                 <ul>
                                     <li>Request details (method, path, query parameters)</li>
                                     <li>User information from Azure AD tokens</li>
@@ -273,13 +275,14 @@
                                     <li>Response status and timing</li>
                                     <li>Geographic location and client IP</li>
                                 </ul>
-                            </section>
+                            </div>
 
-                            <section id="implementation">
-                                <h3>First Implementation</h3>
-                                <p>Our initial approach used FastAPI's middleware system with a basic logging setup:</p>
+                            <div class="card card--section">
+                                <h3 class="card__title">First Implementation</h3>
+                                <p class="card__content">Our initial approach used FastAPI's middleware system with a basic logging setup:</p>
                                 
-                                <pre><code class="language-python">
+                                <div class="card card--code">
+                                    <pre><code class="language-python card__content">
 class AuditLoggingMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next):
         # Basic logging implementation
@@ -289,10 +292,11 @@ class AuditLoggingMiddleware(BaseHTTPMiddleware):
         
         logging.info(f"Request: {request.method} {request.url.path}")
         return response
-                                </code></pre>
+                                    </code></pre>
+                                </div>
 
                                 <p>While this worked, it lacked structured logging and proper integration with Azure Application Insights.</p>
-                            </section>
+                            </div>
                         </section>
 
                         <section id="azure-insights">
@@ -300,7 +304,8 @@ class AuditLoggingMiddleware(BaseHTTPMiddleware):
                             
                             <p>The next step was creating a custom handler to properly format our logs for Azure Application Insights:</p>
 
-                            <pre><code class="language-python">
+                            <div class="card card--code">
+                                <pre><code class="language-python card__content">
 class ApplicationInsightsHandler(AzureLogHandler):
     def __init__(self, connection_string):
         super().__init__(connection_string=connection_string)
@@ -311,7 +316,8 @@ class ApplicationInsightsHandler(AzureLogHandler):
                 self._add_custom_dimensions(record.custom_dimensions)
             )
         super().emit(record)
-                            </code></pre>
+                                </code></pre>
+                            </div>
 
                             <p>This allowed us to send structured data with custom dimensions, making our logs more queryable and valuable for analysis.</p>
                         </section>
