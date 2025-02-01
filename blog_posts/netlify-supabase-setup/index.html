@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web App Deployment with Netlify & Supabase - SG Data Solutions</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="/src/css/style.css">
+    
+    <!-- Bootstrap Icons CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Prism.js for code highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand" href="#">SG Data Solutions</a>
+            
+            <!-- Mobile Toggle Button -->
+            <button 
+                class="navbar-toggler" 
+                type="button" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" 
+                aria-expanded="false" 
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navigation Items -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#competencies">Competencies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#cv">CV</a>
+                    </li>
+                    <li class="nav-item has-megamenu">
+                        <!-- Mobile/small screen version -->
+                        <a class="nav-link d-lg-none" href="#" data-bs-toggle="collapse" data-bs-target="#projectsSubmenu" aria-expanded="false">
+                            Projects
+                            <i class="bi bi-chevron-right"></i>
+                        </a>
+                        <div class="submenu collapse" id="projectsSubmenu">
+                            <!-- "View All" link at the top -->
+                            <a href="/#projects" class="menu-header">
+                                View All Projects
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                            <div class="menu-items">
+                                <a href="/projects/regulatory-reporting/" class="menu-item">
+                                    <h4>Regulatory Reporting</h4>
+                                    <p>Enterprise data warehouse solution for regulatory reporting</p>
+                                    <div class="tags">
+                                        <span class="badge bg-primary">Financial Services</span>
+                                        <span class="badge bg-secondary">Data Migration</span>
+                                    </div>
+                                </a>
+                                <a href="/projects/performance-pay/" class="menu-item">
+                                    <h4>Performance Pay</h4>
+                                    <p>Data-driven transformation of performance pay structures</p>
+                                    <div class="tags">
+                                        <span class="badge bg-info">HR Analytics</span>
+                                        <span class="badge bg-success">Financial Modeling</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Large screen version -->
+                        <a class="nav-link d-none d-lg-block" href="/#projects">
+                            Projects
+                            <i class="bi bi-chevron-right"></i>
+                        </a>
+                        <div class="megamenu d-none d-lg-block">
+                            <div class="container">
+                                <div class="menu-items">
+                                    <a href="/projects/regulatory-reporting/" class="menu-item">
+                                        <h4>Regulatory Reporting</h4>
+                                        <p>Enterprise data warehouse solution for regulatory reporting</p>
+                                        <div class="tags">
+                                            <span class="badge bg-primary">Financial Services</span>
+                                            <span class="badge bg-secondary">Data Migration</span>
+                                        </div>
+                                    </a>
+                                    <a href="/projects/performance-pay/" class="menu-item">
+                                        <h4>Performance Pay</h4>
+                                        <p>Data-driven transformation of performance pay structures</p>
+                                        <div class="tags">
+                                            <span class="badge bg-info">HR Analytics</span>
+                                            <span class="badge bg-success">Financial Modeling</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item has-megamenu">
+                        <!-- Mobile/small screen version -->
+                        <a class="nav-link d-lg-none" href="#" data-bs-toggle="collapse" data-bs-target="#blogSubmenu" aria-expanded="false">
+                            Blog
+                            <i class="bi bi-chevron-right"></i>
+                        </a>
+                        <div class="submenu collapse" id="blogSubmenu">
+                            <!-- "View All" link at the top -->
+                            <a href="/#blog" class="menu-header">
+                                View All Blog Posts
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                            <div class="menu-items">
+                                <a href="/blog_posts/api-audit-logging/" class="menu-item">
+                                    <h4>API Audit Logging</h4>
+                                    <p>Data-driven transformation...</p>
+                                    <div class="tags">
+                                        <span class="badge bg-primary">FastAPI</span>
+                                        <span class="badge bg-secondary">Logging</span>
+                                        <span class="badge bg-info">Audit</span>
+                                    </div>
+                                </a>
+                                
+                                <a href="/blog_posts/netlify-supabase-setup/" class="menu-item">
+                                    <h4>Netlify & Supabase Setup</h4>
+                                    <p>Data-driven transformation...</p>
+                                    <div class="tags">
+                                        <span class="badge bg-primary">Netlify</span>
+                                        <span class="badge bg-secondary">Supabase</span>
+                                        <span class="badge bg-info">PostgreSQL</span>
+                                        <span class="badge bg-success">Authentication</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Large screen version -->
+                        <a class="nav-link d-none d-lg-block" href="/#blog">
+                            Blog
+                            <i class="bi bi-chevron-right"></i>
+                        </a>
+                        <div class="megamenu d-none d-lg-block">
+                            <div class="container">
+                                <div class="menu-items">
+                                    <a href="/blog_posts/api-audit-logging/" class="menu-item">
+                                        <h4>API Audit Logging</h4>
+                                        <p>Data-driven transformation...</p>
+                                        <div class="tags">
+                                            <span class="badge bg-primary">FastAPI</span>
+                                            <span class="badge bg-secondary">Logging</span>
+                                            <span class="badge bg-info">Audit</span>
+                                        </div>
+                                    </a>
+                                
+                                    <a href="/blog_posts/netlify-supabase-setup/" class="menu-item">
+                                        <h4>Netlify & Supabase Setup</h4>
+                                        <p>Data-driven transformation...</p>
+                                        <div class="tags">
+                                            <span class="badge bg-primary">Netlify</span>
+                                            <span class="badge bg-secondary">Supabase</span>
+                                            <span class="badge bg-info">PostgreSQL</span>
+                                            <span class="badge bg-success">Authentication</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <article class="blog-post">
+        <header class="blog-header">
+            <div class="container">
+                <div class="breadcrumb-nav mb-4">
+                    <a href="/#blog" class="back-button">
+                        <i class="bi bi-arrow-left-circle-fill"></i> Back to Blog
+                    </a>
+                </div>
+                <div class="blog-meta">
+                    <span class="badge bg-primary">Web Development</span>
+                    <span class="badge bg-secondary">Netlify</span>
+                    <span class="badge bg-info">Supabase</span>
+                    <span class="badge bg-success">PostgreSQL</span>
+                    <span class="badge bg-warning text-dark">Authentication</span>
+                </div>
+                <h1>How to Deploy a Full-Stack Web App with Netlify and Supabase</h1>
+                <p class="lead">A comprehensive guide to deploying and hosting web applications using modern cloud services.</p>
+                <div class="milestone-cards">
+                    <div class="milestone-card">
+                        <i class="bi bi-exclamation-circle"></i>
+                        <h3>Challenge</h3>
+                        <p>Complex deployment setup</p>
+                        <div class="metric">Multiple services to integrate</div>
+                        <span class="label">Constraint: Seamless user experience</span>
+                    </div>
+                    <div class="milestone-card">
+                        <i class="bi bi-lightning"></i>
+                        <h3>Solution</h3>
+                        <p>Netlify + Supabase Integration</p>
+                        <div class="metric">2 platforms</div>
+                        <span class="label">Unified Solution</span>
+                    </div>
+                    <div class="milestone-card">
+                        <i class="bi bi-check2-circle"></i>
+                        <h3>Impact</h3>
+                        <p>Streamlined deployment process</p>
+                        <div class="metric">5 min</div>
+                        <span class="label">Deploy Time</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="blog-content">
+                        <!-- Convert each section to use card styling -->
+                        <section id="introduction">
+                            <h2>Introduction</h2>
+                            <p>When building modern web applications, deployment and hosting can be as crucial as the development itself. This guide walks through deploying a full-stack application using Netlify for frontend hosting and Supabase for backend services, creating a robust and scalable infrastructure.</p>
+                        </section>
+
+                        <section id="hosting-setup">
+                            <h2>Hosting Your Portfolio & App on Netlify</h2>
+                            
+                            <div class="card card--section">
+                                <h3 class="card__title">Setting Up Netlify</h3>
+                                <p class="card__content">Follow these steps to get your app deployed:</p>
+                                <ol>
+                                    <li>Create a Netlify account</li>
+                                    <li>Connect to GitHub</li>
+                                    <li>Choose the branch</li>
+                                    <li>Set build settings</li>
+                                    <li>Deploy the app</li>
+                                </ol>
+                            </div>
+                        </section>
+
+                        <section id="adding-subdomain">
+                            <h2>Adding a Custom Subdomain</h2>
+                            <p>To add your app under a subdomain like <code>app.yourdomain.com</code>:</p>
+                            <ul>
+                                <li><strong>Go to your DNS provider:</strong> Log in to your domain registrar (e.g., One.com).</li>
+                                <li><strong>Create a CNAME record:</strong> Set <code>Host name</code> as <code>app</code> and <code>Alias of</code> as <code>yourapp.netlify.app</code>.</li>
+                                <li><strong>Add the subdomain to Netlify:</strong> In Netlify, go to <code>Domain settings</code> and add <code>app.yourdomain.com</code> as a custom domain.</li>
+                            </ul>
+                        </section>
+
+                        <section id="database-setup">
+                            <h2>3. Database Setup with Supabase</h2>
+                            <p>For your web app, you'll need a cloud-based database. Supabase offers a fully managed PostgreSQL database with additional features like authentication and storage. It's a perfect choice for building scalable apps.</p>
+                            <p>Steps to set up Supabase with your app:</p>
+                            <ol>
+                                <li><strong>Create a Supabase account:</strong> Sign up on <a href="https://supabase.com/" target="_blank">Supabase</a>.</li>
+                                <li><strong>Create a new project:</strong> Provide a database name and choose a region. You'll get a connection string and keys.</li>
+                                <li><strong>Export your local PostgreSQL database:</strong> Run <code>pg_dump</code> to create a backup file.</li>
+                                <li><strong>Import your database:</strong> Upload your <code>backup.sql</code> to Supabase via the SQL Editor.</li>
+                                <li><strong>Update your app's database connection:</strong> Replace the local PostgreSQL URL with the Supabase connection string in your app's environment variables.</li>
+                            </ol>
+                        </section>
+
+                        <section id="authentication">
+                            <h2>4. Authentication with Supabase vs. Netlify</h2>
+                            <p>When it comes to managing user authentication, **Supabase Auth** is the better choice if your app involves database interactions. It handles user sign-ups, log-ins, social logins (Google, GitHub), and integrates directly with your PostgreSQL database.</p>
+                            <p>If your web app requires database-driven user management, use Supabase's authentication system to manage your users. Here's an example of how to integrate it:</p>
+                            <pre><code>
+const { createClient } = require('@supabase/supabase-js');
+const supabase = createClient('your-supabase-url', 'your-anon-key');
+
+// User sign-up
+const signUp = async (email, password) => {
+  const { user, error } = await supabase.auth.signUp({ email, password });
+  if (error) {
+    console.log("Error signing up:", error.message);
+  } else {
+    console.log("Signed up user:", user);
+  }
+};
+
+// User log-in
+const logIn = async (email, password) => {
+  const { user, error } = await supabase.auth.signIn({ email, password });
+  if (error) {
+    console.log("Error logging in:", error.message);
+  } else {
+    console.log("Logged in user:", user);
+  }
+};
+                            </code></pre>
+                        </section>
+
+                        <section id="testing">
+                            <h2>5. Testing and Final Deployment</h2>
+                            <p>Once you've connected everything, test your app on Netlify to ensure that it deploys correctly. If there are any issues, don't worry—Netlify will show build logs so you can identify and fix errors. If everything works, your app will be live on the web!</p>
+                            <p>And there you have it! You now have a full-stack web app hosted on Netlify with a PostgreSQL database via Supabase, along with authentication for secure access to your application.</p>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>
