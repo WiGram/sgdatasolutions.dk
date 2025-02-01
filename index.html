@@ -166,19 +166,21 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="vh-100 d-flex align-items-center">
-        <!-- Main container with text content -->
-        <div class="text-container">
-            <div class="hero-content">
-                <h1>William Sjölin Gram</h1>
-                <h2>Founder of SG Data Solutions</h2>
-                <p>Transforming raw data into actionable intelligence through robust data architecture and analytics solutions</p>
+    <section class="hero vh-100 d-flex align-items-center" id="hero">
+        <!-- Background container for parallax -->
+        <div class="hero__background"></div>
+        
+        <!-- Main content with text -->
+        <div class="hero__container">
+            <div class="hero__content">
+                <h1 class="hero__title">William Sjölin Gram</h1>
+                <h2 class="hero__subtitle">Founder of SG Data Solutions</h2>
+                <p class="hero__text">Transforming raw data into actionable intelligence through robust data architecture and analytics solutions</p>
             </div>
         </div>
         
-        <!-- Scroll indicator - moved outside text-container -->
-        <div class="scroll-indicator">
-            <a href="#about" class="scroll-down">
+        <div class="hero__scroll">
+            <a href="#about" class="hero__scroll-link">
                 <i class="bi bi-chevron-down"></i>
             </a>
         </div>
@@ -316,141 +318,146 @@
             <!-- Technical Skills Section -->
             <div class="technical-skills fade-in">
                 <h3>Technical Expertise</h3>
-                <div class="skills-grid">
+                <div class="skills-cards">
                     <!-- Cloud & Infrastructure -->
-                    <div class="card competency-card">
-                        <div class="card-header">
-                            <i class="fas fa-cloud"></i>
-                            <h4>Cloud & Infrastructure</h4>
+                    <div class="card skills__card">
+                        <div class="skills__card-header">
+                            <i class="skills__icon fas fa-cloud"></i>
+                            <h4 class="skills__title">Cloud & Infrastructure</h4>
                         </div>
-                        <ul class="skill-list">
-                            <li class="skill-item expert">
-                                <div class="skill-name-group">
-                                    <span class="skill-name">Azure Data Factory</span>
+                        <ul class="skills__list">
+                            <li class="skills__item">
+                                <div class="skills__name-wrapper">
+                                    <span class="skills__name">Azure Data Factory</span>
                                 </div>
-                                <div class="skill-level" data-level="expert"></div>
+                                <div class="skills__level skills__level--expert"></div>
                             </li>
-                            <li class="skill-item expert">
-                                <div class="skill-name-group">
-                                    <span class="skill-name">Azure Functions</span>
+                            <li class="skills__item">
+                                <div class="skills__name-wrapper">
+                                    <span class="skills__name">Azure Functions</span>
                                 </div>
-                                <div class="skill-level" data-level="intermediate"></div>
+                                <div class="skills__level skills__level--intermediate"></div>
                             </li>
-                            <li class="skill-item expert">
-                                <div class="skill-name-group">
-                                    <span class="skill-name">Azure Data Lake</span>
+                            <li class="skills__item">
+                                <div class="skills__name-wrapper">
+                                    <span class="skills__name">Azure Data Lake</span>
                                 </div>
-                                <div class="skill-level" data-level="advanced"></div>
+                                <div class="skills__level skills__level--advanced"></div>
                             </li>
-                            <li class="skill-item expert">
-                                <div class="skill-name-group">
-                                    <span class="skill-name">Azure SQL Database</span>
+                            <li class="skills__item">
+                                <div class="skills__name-wrapper">
+                                    <span class="skills__name">Azure SQL Database</span>
                                 </div>
-                                <div class="skill-level" data-level="expert"></div>
+                                <div class="skills__level skills__level--expert"></div>
                             </li>
                         </ul>
                     </div>
 
                     <!-- Data Engineering -->
-                    <div class="card competency-card">
-                        <div class="card-header">
-                            <i class="fas fa-database"></i>
-                            <h4>Data Engineering</h4>
+                    <div class="card skills__card">
+                        <div class="skills__card-header">
+                            <i class="skills__icon fas fa-database"></i>
+                            <h4 class="skills__title">Data Engineering</h4>
                         </div>
-                        <ul class="skill-list">
-                            <li class="skill-item expert">
-                                <div class="skill-name-group">
-                                    <span class="skill-name">MS SQL Server</span>
+                        <ul class="skills__list">
+                            <li class="skills__item">
+                                <div class="skills__name-wrapper">
+                                    <span class="skills__name">MS SQL Server</span>
                                 </div>
-                                <div class="skill-level" data-level="expert"></div>
+                                <div class="skills__level skills__level--expert"></div>
                             </li>
-                            <li class="skill-item expert">
-                                <div class="skill-name-group">
-                                    <span class="skill-name">Teradata SQL</span>
+                            <li class="skills__item">
+                                <div class="skills__name-wrapper">
+                                    <span class="skills__name">Teradata SQL</span>
                                 </div>
-                                <div class="skill-level" data-level="expert"></div>
+                                <div class="skills__level skills__level--expert"></div>
                             </li>
-                            <li class="skill-item intermediate">
-                                <div class="skill-name-group">
-                                    <span class="skill-name">PostgreSQL</span>
+                            <li class="skills__item">
+                                <div class="skills__name-wrapper">
+                                    <span class="skills__name">PostgreSQL</span>
                                 </div>
-                                <div class="skill-level" data-level="intermediate"></div>
+                                <div class="skills__level skills__level--intermediate"></div>
                             </li>
                         </ul>
                     </div>
 
                     <!-- Analytics & BI -->
-                    <div class="card competency-card">
-                        <div class="card-header">
-                            <i class="fas fa-chart-line"></i>
-                            <h4>Programming and Analytics</h4>
+                    <div class="card skills__card">
+                        <div class="skills__card-header">
+                            <i class="skills__icon fas fa-chart-line"></i>
+                            <h4 class="skills__title">Programming and Analytics</h4>
                         </div>
-                        <ul class="skill-list">
-                            <li class="skill-item expert">
-                                <div class="skill-name-group">
-                                    <span class="skill-name">Python Analytics Stack</span>
+                        <ul class="skills__list">
+                            <li class="skills__item">
+                                <div class="skills__name-wrapper">
+                                    <span class="skills__name">Python Analytics Stack</span>
                                     <small>pandas, numpy</small>
                                 </div>
-                                <div class="skill-level" data-level="advanced"></div>
+                                <div class="skills__level skills__level--advanced"></div>
                             </li>
-                            <li class="skill-item intermediate">
-                                <div class="skill-name-group">
-                                    <span class="skill-name">FastAPI Development</span>
+                            <li class="skills__item">
+                                <div class="skills__name-wrapper">
+                                    <span class="skills__name">FastAPI Development</span>
                                     <small>REST APIs, async operations</small>
                                 </div>
-                                <div class="skill-level" data-level="intermediate"></div>
+                                <div class="skills__level skills__level--intermediate"></div>
                             </li>
-                            <li class="skill-item advanced">
-                                <div class="skill-name-group">
-                                    <span class="skill-name">R & Shiny</span>
+                            <li class="skills__item">
+                                <div class="skills__name-wrapper">
+                                    <span class="skills__name">R & Shiny</span>
                                     <small>Statistical analysis, dashboarding</small>
                                 </div>
-                                <div class="skill-level" data-level="advanced"></div>
+                                <div class="skills__level skills__level--advanced"></div>
                             </li>
                         </ul>
                     </div>
 
                     <!-- Development -->
-                    <div class="card competency-card">
-                        <div class="card-header">
-                            <i class="fas fa-code"></i>
-                            <h4>Business Analytics and Reporting</h4>
+                    <div class="card skills__card">
+                        <div class="skills__card-header">
+                            <i class="skills__icon fas fa-code"></i>
+                            <h4 class="skills__title">Business Analytics and Reporting</h4>
                         </div>
-                        <ul class="skill-list">
-                            <li class="skill-item expert">
-                                <div class="skill-name-group">
-                                    <span class="skill-name">Advanced Excel Analytics</span>
+                        <ul class="skills__list">
+                            <li class="skills__item">
+                                <div class="skills__name-wrapper">
+                                    <span class="skills__name">Advanced Excel Analytics</span>
                                     <small>Financial modeling, Performance analytics</small>
                                 </div>
-                                <div class="skill-level" data-level="expert"></div>
+                                <div class="skills__level skills__level--expert"></div>
                             </li>
-                            <li class="skill-item expert">
-                                <div class="skill-name-group">
-                                    <span class="skill-name">Business Intelligence</span>
+                            <li class="skills__item">
+                                <div class="skills__name-wrapper">
+                                    <span class="skills__name">Business Intelligence</span>
                                     <small>Reporting solutions</small>
                                 </div>
-                                <div class="skill-level" data-level="advanced"></div>
+                                <div class="skills__level skills__level--advanced"></div>
                             </li>
                         </ul>
                     </div>
-                </div>
-
-                <!-- Methodologies (full width) -->
-                <div class="card competency-card methodology-card">
-                    <div class="card-header">
-                        <i class="fas fa-tasks"></i>
-                        <h4>Methodologies & Practices</h4>
+                    
+                    <div class="card skills__card">
+                        <div class="skills__card-header">
+                            <i class="skills__icon fas fa-code"></i>
+                            <h4 class="skills__title">Methodologies & Practices</h4>
+                        </div>
+                        <ul class="skills__list">
+                            <li class="skills__item">
+                                <div class="skills__name-wrapper">
+                                    <span class="skills__name">Agile Scrum</span>
+                                    <small>Experience with PI planning, sprint management, and daily standups</small>
+                                </div>
+                                <div class="skills__level skills__level--advanced"></div>
+                            </li>
+                            <li class="skills__item">
+                                <div class="skills__name-wrapper">
+                                    <span class="skills__name">Project Management</span>
+                                    <small>Stakeholder management and critical delivery coordination</small>
+                                </div>
+                                <div class="skills__level skills__level--intermediate"></div>
+                            </li>
+                        </ul>
                     </div>
-                    <ul class="skill-list">
-                        <li>
-                            <span class="methodology-item">Agile Scrum</span>
-                            <p>Experience with PI planning, sprint management, and daily standups</p>
-                        </li>
-                        <li>
-                            <span class="methodology-item">Project Management</span>
-                            <p>Stakeholder management and critical delivery coordination</p>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>

@@ -18,6 +18,19 @@ document.addEventListener('DOMContentLoaded', () => {
             navbar.classList.remove('scrolled')
         }
     })
+
+    // Debug: Check if we can find fade-in elements
+    const fadeElements = document.querySelectorAll('.fade-in');
+    const checkVisibility = () => {
+        fadeElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+            
+            if (elementTop < window.innerHeight - elementVisible) {
+                element.classList.add('visible');
+            }
+        });
+    };
     
     // Handle active nav link on scroll
     window.addEventListener('scroll', () => {
@@ -79,34 +92,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Initialize all dropdowns
-    document.addEventListener('DOMContentLoaded', function() {
-        // Initialize Bootstrap dropdowns
-        var dropdowns = document.querySelectorAll('.dropdown-toggle');
-        dropdowns.forEach(dropdown => {
-            dropdown.addEventListener('click', function(e) {
-                e.preventDefault();
-                var dropdownMenu = this.nextElementSibling;
-                if (dropdownMenu.classList.contains('show')) {
-                    dropdownMenu.classList.remove('show');
-                    this.setAttribute('aria-expanded', 'false');
-                } else {
-                    dropdownMenu.classList.add('show');
-                    this.setAttribute('aria-expanded', 'true');
-                }
-            });
-        });
-
-        // Close dropdowns when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!e.target.matches('.dropdown-toggle')) {
-                var dropdowns = document.querySelectorAll('.dropdown-menu.show');
-                dropdowns.forEach(dropdown => {
-                    dropdown.classList.remove('show');
-                    dropdown.previousElementSibling.setAttribute('aria-expanded', 'false');
-                });
+    // Initialize Bootstrap dropdowns
+    const dropdowns = document.querySelectorAll('.dropdown-toggle');
+    dropdowns.forEach(dropdown => {
+        dropdown.addEventListener('click', function(e) {
+            e.preventDefault();
+            var dropdownMenu = this.nextElementSibling;
+            if (dropdownMenu.classList.contains('show')) {
+                dropdownMenu.classList.remove('show');
+                this.setAttribute('aria-expanded', 'false');
+            } else {
+                dropdownMenu.classList.add('show');
+                this.setAttribute('aria-expanded', 'true');
             }
         });
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.matches('.dropdown-toggle')) {
+            var dropdowns = document.querySelectorAll('.dropdown-menu.show');
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.remove('show');
+                dropdown.previousElementSibling.setAttribute('aria-expanded', 'false');
+            });
+        }
     });
 
     // Handle mobile menu expansion
@@ -157,48 +167,46 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // TOC Intersection Observer
-    document.addEventListener('DOMContentLoaded', function() {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const id = entry.target.getAttribute('id');
-                    if (id) {
-                        // Find all nav links
-                        const links = document.querySelectorAll('.toc .nav-link');
-                        
-                        // Remove all active classes
-                        links.forEach(link => link.classList.remove('active'));
-                        
-                        // Find and activate the corresponding link
-                        const activeLink = document.querySelector(`.toc .nav-link[href="#${id}"]`);
-                        if (activeLink) {
-                            activeLink.classList.add('active');
-                        }
+    const tocObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                if (id) {
+                    // Find all nav links
+                    const links = document.querySelectorAll('.toc .nav-link');
+                    
+                    // Remove all active classes
+                    links.forEach(link => link.classList.remove('active'));
+                    
+                    // Find and activate the corresponding link
+                    const activeLink = document.querySelector(`.toc .nav-link[href="#${id}"]`);
+                    if (activeLink) {
+                        activeLink.classList.add('active');
                     }
                 }
-            });
-        }, {
-            // Adjust these values to control when sections become "active"
-            rootMargin: '-20% 0px -20% 0px',
-            threshold: [0, 0.25, 0.5]
+            }
         });
+    }, {
+        rootMargin: '-20% 0px -20% 0px',
+        threshold: [0, 0.25, 0.5]
+    });
 
-        // Observe all sections with IDs
-        document.querySelectorAll('section[id]').forEach((section) => {
-            observer.observe(section);
-        });
+    // Observe all sections with IDs
+    document.querySelectorAll('section[id]').forEach((section) => {
+        tocObserver.observe(section);
     });
 
     // Add smooth parallax effect with different speeds and fade
     window.addEventListener('scroll', function() {
         const scrolled = window.scrollY;
-        const backgroundSpeed = 0.3; // Background moves at 30% speed
-        const textSpeed = 0.35;      // Text moves at 35% speed
+        const backgroundSpeed = 0.3;
+        const textSpeed = 0.35;
         
         requestAnimationFrame(() => {
-            const heroBackground = document.querySelector('#hero::before');
-            const heroText = document.querySelector('#hero .text-container');
-            const scrollButton = document.querySelector('.scroll-down');
+            // Update these selectors to match our HTML structure
+            const heroContent = document.querySelector('.hero__content');
+            const heroBackground = document.querySelector('.hero__background');
+            const heroScroll = document.querySelector('.hero__scroll-link');
             
             if (scrolled < window.innerHeight) {
                 // Calculate fade based on scroll position
@@ -209,21 +217,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (heroBackground) {
                     heroBackground.style.transform = `translateY(${scrolled * backgroundSpeed}px)`;
                 }
-                if (heroText) {
-                    heroText.style.transform = `translateY(${scrolled * textSpeed}px)`;
-                    heroText.style.opacity = opacity;
+                if (heroContent) {
+                    heroContent.style.transform = `translateY(${scrolled * textSpeed}px)`;
+                    heroContent.style.opacity = opacity;
                 }
                 
                 // Quick fade for scroll button
-                if (scrollButton) {
-                    scrollButton.style.opacity = Math.max(0, 0.7 - (scrolled / 100)); // Fades out within first 70px of scroll
+                if (heroScroll) {
+                    heroScroll.style.opacity = Math.max(0, 0.7 - (scrolled / 100));
                 }
             }
         });
     });
 
     // Add to your existing main.js
-    document.querySelector('.scroll-down').addEventListener('click', function(e) {
+    document.querySelector('.hero__scroll-link').addEventListener('click', function(e) {
         e.preventDefault();
         const heroSection = document.querySelector('#hero');
         const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
@@ -232,21 +240,6 @@ document.addEventListener('DOMContentLoaded', () => {
             behavior: 'smooth'
         });
     });
-
-    // Debug: Check if we can find fade-in elements
-    const fadeElements = document.querySelectorAll('.fade-in');
-    
-    // Function to check if element is in viewport
-    const checkVisibility = () => {
-        fadeElements.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top;
-            const elementVisible = 150;
-            
-            if (elementTop < window.innerHeight - elementVisible) {
-                element.classList.add('visible');
-            }
-        });
-    };
     
     // Check visibility on scroll
     window.addEventListener('scroll', checkVisibility);
